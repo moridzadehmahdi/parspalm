@@ -1,0 +1,332 @@
+/* product.css - استایل صفحه محصول */
+.product-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-container {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.product-gallery {
+  flex: 1;
+  min-width: 300px;
+}
+
+.main-image {
+  border: 1px solid #e5b567;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.main-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+}
+
+.thumbnails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.thumbnails img:hover {
+  border-color: var(--gold);
+}
+
+.product-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-info h1 {
+  color: var(--brown);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.rating {
+  margin-bottom: 15px;
+  color: var(--gold);
+}
+
+.rating span {
+  color: #666;
+  margin-right: 10px;
+}
+
+.price {
+  margin-bottom: 20px;
+}
+
+.current-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--date);
+  margin-left: 15px;
+}
+
+.old-price {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.discount {
+  background: var(--red);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.description {
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+.features {
+  margin-top: 15px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  color: var(--green);
+}
+
+.feature i {
+  margin-left: 10px;
+}
+
+.selection {
+  margin-bottom: 25px;
+}
+
+.weight-selection, .quantity-selection {
+  margin-bottom: 15px;
+}
+
+.weight-selection label, .quantity-selection label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.weight-selection select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #e5b567;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  width: 120px;
+}
+
+.quantity-control button {
+  background: var(--gold);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.quantity-control input {
+  width: 40px;
+  text-align: center;
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid #e5b567;
+  border-radius: 5px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.add-to-cart, .buy-now {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-to-cart {
+  background: var(--green);
+  color: white;
+}
+
+.buy-now {
+  background: var(--date);
+  color: white;
+}
+
+.add-to-cart:hover {
+  background: #3a7a36;
+}
+
+.buy-now:hover {
+  background: #6b2b00;
+}
+
+.product-meta {
+  border-top: 1px solid #f0e6d7;
+  padding-top: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.meta-item i {
+  margin-left: 10px;
+  color: var(--gold);
+}
+
+/* تب‌های محصول */
+.product-tabs {
+  margin-bottom: 40px;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #f0e6d7;
+  margin-bottom: 20px;
+}
+
+.tab-link {
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  position: relative;
+}
+
+.tab-link.active {
+  color: var(--date);
+  font-weight: bold;
+}
+
+.tab-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--date);
+}
+
+.tab-content {
+  display: none;
+  line-height: 1.8;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tab-content table th, .tab-content table td {
+  padding: 12px;
+  text-align: right;
+  border-bottom: 1px solid #f0e6d7;
+}
+
+.tab-content table th {
+  background: #f9f5ed;
+  width: 30%;
+}
+
+/* نظرات */
+.review {
+  border-bottom: 1px solid #f0e6d7;
+  padding: 20px 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reviewer {
+  font-weight: bold;
+}
+
+.review-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.add-review-btn {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.related-products {
+  margin-top: 40px;
+}
+
+.related-products h2 {
+  color: var(--brown);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

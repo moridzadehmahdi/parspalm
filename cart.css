@@ -1,0 +1,262 @@
+/* cart.css - استایل صفحه سبد خرید */
+.cart-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 60vh;
+}
+
+.cart-page h1 {
+  color: var(--brown);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.cart-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cart-items {
+  flex: 2;
+  min-width: 300px;
+}
+
+.empty-cart-message {
+  text-align: center;
+  padding: 50px 20px;
+  color: #666;
+}
+
+.empty-cart-message i {
+  font-size: 4rem;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.empty-cart-message p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.continue-shopping {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #f0e6d7;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: white;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-weight: bold;
+  color: var(--brown);
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.cart-item-weight {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.cart-item-price {
+  color: var(--date);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5b567;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.quantity-control button {
+  background: var(--light-beige);
+  border: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.quantity-control input {
+  width: 40px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid #e5b567;
+  border-right: 1px solid #e5b567;
+  padding: 5px;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: var(--red);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cart-summary {
+  flex: 1;
+  min-width: 300px;
+  background: #f9f5ed;
+  padding: 20px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.cart-summary h2 {
+  color: var(--brown);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.summary-details {
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0e6d7;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--date);
+  border-bottom: none;
+  margin-top: 20px;
+}
+
+.discount-row {
+  color: var(--green);
+}
+
+.coupon-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.coupon-section input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e5b567;
+  border-radius: 5px;
+}
+
+.coupon-section button {
+  background: var(--gold);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #3a7a36;
+}
+
+.checkout-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.security-info {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.security-info i {
+  margin-left: 5px;
+}
+
+.suggested-products {
+  margin-top: 50px;
+}
+
+.suggested-products h2 {
+  color: var(--brown);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 768px) {
+  .cart-container {
+    flex-direction: column;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .cart-item-image {
+    margin: 0 auto;
+  }
+  
+  .coupon-section {
+    flex-direction: column;
+  }
+}

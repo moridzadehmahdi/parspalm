@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>خرما پیارم ممتاز - Pars Palm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css"> <!-- فایل استایل جداگانه برای صفحه محصول -->
+</head>
+<body>
+
+<!-- هدر مشابه صفحه اصلی -->
+<header>
+    <div class="header-container">
+    <div class="logo">Pars Palm</div>
+
+    <!-- دکمه منوی همبرگری -->
+    <button class="menu-toggle" aria-label="باز کردن منو">
+      <span class="menu-icon">☰</span>
+      <span class="menu-text">منو</span>
+    </button>
+
+    <!-- نوار جستجو -->
+    <div class="search-bar">
+      <input type="search" placeholder="جستجوی محصولات..." aria-label="جستجو" />
+      <button class="search-icon"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- آیکون های کاربر و سبد خرید -->
+    <div class="header-icons">
+      <a href="account.html" class="user-icon" aria-label="حساب کاربری">
+        <i class="fas fa-user"></i>
+      </a>
+      <a href="cart.html" class="cart-icon" aria-label="سبد خرید">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+
+    <!-- منوی همبرگری بهبود یافته -->
+    <nav class="main-menu">
+      <div class="menu-header">
+        <span>محصولات ما</span>
+        <button class="menu-close" aria-label="بستن منو">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-item has-children">
+          <div class="menu-link">
+            <i class="fas fa-calendar-day"></i>
+            <span>خرما</span>
+            <i class="dropdown-icon fas fa-chevron-left"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="category.html?cat=dates&sub=special"><i class="fas fa-circle"></i> خاصویی</a></li>
+            <li><a href="category.html?cat=dates&sub=piarom"><i class="fas fa-circle"></i> پیارم</a></li>
+            <li><a href="category.html?cat=dates&sub=shahani"><i class="fas fa-circle"></i> شاهانی</a></li>
+            <li><a href="category.html?cat=dates&sub=kabkab"><i class="fas fa-circle"></i> کبکاب</a></li>
+            <li><a href="category.html?cat=dates&sub=rabbi"><i class="fas fa-circle"></i> ربی</a></li>
+            <li><a href="category.html?cat=dates&sub=zahedi"><i class="fas fa-circle"></i> زاهدی</a></li>
+            <li><a href="category.html?cat=dates&sub=stemran"><i class="fas fa-circle"></i> استعمران</a></li>
+          </ul>
+        </li>
+        
+        <li class="menu-item has-children">
+          <div class="menu-link">
+            <i class="fas fa-utensils"></i>
+            <span>مشتقات جذاب</span>
+            <i class="dropdown-icon fas fa-chevron-left"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="category.html?cat=derivatives&sub=halva"><i class="fas fa-circle"></i> حلوا</a></li>
+            <li><a href="category.html?cat=derivatives&sub=ardeh"><i class="fas fa-circle"></i> ارده</a></li>
+            <li><a href="category.html?cat=derivatives&sub=date-syrup"><i class="fas fa-circle"></i> شیره خرما</a></li>
+            <li><a href="category.html?cat=derivatives&sub=sweets"><i class="fas fa-circle"></i> شیرینی و کیک‌ها</a></li>
+            <li><a href="category.html?cat=derivatives&sub=fruit-roll"><i class="fas fa-circle"></i> لواشک</a></li>
+            <li><a href="category.html?cat=derivatives&sub=lemon-juice"><i class="fas fa-circle"></i> آبلیمو</a></li>
+            <li><a href="category.html?cat=derivatives&sub=verjuice"><i class="fas fa-circle"></i> آبغوره</a></li>
+            <li><a href="category.html?cat=derivatives&sub=vinegar"><i class="fas fa-circle"></i> سرکه</a></li>
+            <li><a href="category.html?cat=derivatives&sub=tomato-paste"><i class="fas fa-circle"></i> رب گوجه</a></li>
+            <li><a href="category.html?cat=derivatives&sub=jam"><i class="fas fa-circle"></i> مربا</a></li>
+          </ul>
+        </li>
+        
+        <li class="menu-item has-children">
+          <div class="menu-link">
+            <i class="fas fa-seedling"></i>
+            <span>سایر خشکبار</span>
+            <i class="dropdown-icon fas fa-chevron-left"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="category.html?cat=nuts&sub=fig"><i class="fas fa-circle"></i> انجیر</a></li>
+            <li><a href="category.html?cat=nuts&sub=pistachio"><i class="fas fa-circle"></i> پسته</a></li>
+            <li><a href="category.html?cat=nuts&sub=walnut"><i class="fas fa-circle"></i> گردو</a></li>
+            <li><a href="category.html?cat=nuts&sub=almond"><i class="fas fa-circle"></i> بادام</a></li>
+            <li><a href="category.html?cat=nuts&sub=hazelnut"><i class="fas fa-circle"></i> فندق</a></li>
+            <li><a href="category.html?cat=nuts&sub=raisin"><i class="fas fa-circle"></i> کشمش</a></li>
+          </ul>
+        </li>
+        
+        <li class="menu-item has-children">
+          <div class="menu-link">
+            <i class="fas fa-honey-pot"></i>
+            <span>عسل و فراورده‌ها</span>
+            <i class="dropdown-icon fas fa-chevron-left"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="category.html?cat=honey&sub=with-comb"><i class="fas fa-circle"></i> عسل با کندو</a></li>
+            <li><a href="category.html?cat=honey&sub=mountain"><i class="fas fa-circle"></i> عسل کوهی</a></li>
+            <li><a href="category.html?cat=honey&sub=sidr"><i class="fas fa-circle"></i> عسل کنار</a></li>
+            <li><a href="category.html?cat=honey&sub=royal-jelly"><i class="fas fa-circle"></i> ژله رویال</a></li>
+            <li><a href="category.html?cat=honey&sub=astragalus"><i class="fas fa-circle"></i> عسل گون</a></li>
+            <li><a href="category.html?cat=honey&sub=thyme"><i class="fas fa-circle"></i> عسل آویشن</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <div class="menu-footer">
+        <div class="user-actions">
+          <a href="account.html" class="user-action-link">
+            <i class="fas fa-user"></i>
+            حساب کاربری
+          </a>
+          <a href="cart.html" class="user-action-link">
+            <i class="fas fa-shopping-cart"></i>
+            سبد خرید
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+        
+        <div class="menu-social">
+          <a href="#" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="واتساپ"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+    </nav>
+    <div class="menu-overlay"></div>
+  </div>
+</header>
+
+<main class="product-page">
+  <div class="product-container">
+    <!-- گالری محصول -->
+    <div class="product-gallery">
+      <div class="main-image">
+        <img src="assets/images/products/piarom-1.jpg" alt="خرما پیارم ممتاز" id="mainImage">
+      </div>
+      <div class="thumbnails">
+        <img src="assets/images/products/piarom-2.jpg" alt="نمای نزدیک" onclick="changeImage(this)">
+        <img src="assets/images/products/piarom-3.jpg" alt="بسته‌بندی" onclick="changeImage(this)">
+        <img src="assets/images/products/piarom-4.jpg" alt="مقایسه اندازه" onclick="changeImage(this)">
+      </div>
+    </div>
+
+    <!-- اطلاعات محصول -->
+    <div class="product-info">
+      <h1>خرما پیارم ممتاز</h1>
+      <div class="rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <span>(۴۷ نظر)</span>
+      </div>
+      
+      <div class="price">
+        <span class="current-price">۱۵۰,۰۰۰ تومان</span>
+        <span class="old-price">۱۸۰,۰۰۰ تومان</span>
+        <span class="discount">۱۶% تخفیف</span>
+      </div>
+      
+      <div class="description">
+        <p>خرمای پیارم درجه یک از بهترین نخلستان‌های استان هرمزگان، با طعمی شیرین و بافتی نرم و لذیذ. این محصول به صورت کاملاً ارگانیک و بدون افزودنی‌های شیمیایی تولید شده است.</p>
+        
+        <div class="features">
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>ارگانیک و طبیعی</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>بسته‌بندی بهداشتی</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>ماندگاری طولانی</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- انتخاب وزن و تعداد -->
+      <div class="selection">
+        <div class="weight-selection">
+          <label>وزن بسته:</label>
+          <select id="weightSelect">
+            <option value="500g">500 گرم - ۱۵۰,۰۰۰ تومان</option>
+            <option value="1kg">1 کیلوگرم - ۲۸۰,۰۰۰ تومان</option>
+            <option value="2kg">2 کیلوگرم - ۵۲۰,۰۰۰ تومان</option>
+          </select>
+        </div>
+        
+        <div class="quantity-selection">
+          <label>تعداد:</label>
+          <div class="quantity-control">
+            <button onclick="decreaseQuantity()">-</button>
+            <input type="number" id="quantity" value="1" min="1">
+            <button onclick="increaseQuantity()">+</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- دکمه‌های action -->
+      <div class="action-buttons">
+        <button class="add-to-cart" onclick="addToCart()">
+          <i class="fas fa-shopping-cart"></i>
+          افزودن به سبد خرید
+        </button>
+        <button class="buy-now" onclick="buyNow()">
+          <i class="fas fa-bolt"></i>
+          خرید سریع
+        </button>
+      </div>
+      
+      <!-- اطلاعات اضافی -->
+      <div class="product-meta">
+        <div class="meta-item">
+          <i class="fas fa-truck"></i>
+          <span>ارسال رایگان برای خرید بالای ۳۰۰,۰۰۰ تومان</span>
+        </div>
+        <div class="meta-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>ضمانت بازگشت کالا تا ۷ روز</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- تب‌های اطلاعات محصول -->
+  <div class="product-tabs">
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab('description')">توضیحات کامل</button>
+      <button class="tab-link" onclick="openTab('specs')">مشخصات فنی</button>
+      <button class="tab-link" onclick="openTab('reviews')">نظرات (۴۷)</button>
+    </div>
+    
+    <div id="description" class="tab-content active">
+      <h3>خرما پیارم مرغوب جنوب</h3>
+      <p>خرما پیارم یکی از مرغوب‌ترین انواع خرما در ایران است که主要在 استان هرمزگان کشت می‌شود. این خرما دارای بافتی نرم، پوستی نازک و هسته‌ای کوچک است.</p>
+      <p>ویژگی‌های منحصر به فرد:</p>
+      <ul>
+        <li>طعم شیرین و ملایم</li>
+        <li>عاری از مواد نگهدارنده</li>
+        <li>دارای ارزش غذایی بالا</li>
+        <li>مناسب برای диабتی‌ها (قند طبیعی)</li>
+      </ul>
+    </div>
+    
+    <div id="specs" class="tab-content">
+      <table>
+        <tr><th>نوع محصول</th><td>خرما طبیعی</td></tr>
+        <tr><th>گونه</th><td>پیارم</td></tr>
+        <tr><th>منطقه کشت</th><td>هرمزگان</td></tr>
+        <tr><th>وزن خالص</th><td>500 گرم - 1 کیلوگرم - 2 کیلوگرم</td></tr>
+        <tr><th>میزان رطوبت</th><td>15-20%</td></tr>
+        <tr><th>مدت ماندگاری</th><td>12 ماه</td></tr>
+        <tr><th>نوع بسته‌بندی</th><td>پاکت زیپ‌دار بهداشتی</td></tr>
+      </table>
+    </div>
+    
+    <div id="reviews" class="tab-content">
+      <div class="review">
+        <div class="review-header">
+          <span class="reviewer">محمد رضایی</span>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p>خرمای بسیار باکیفیتی بود. تازه و خوشمزه. بسته‌بندی خیلی خوبی داشت.</p>
+        <span class="review-date">۱۴۰۲/۰۵/۱۲</span>
+      </div>
+      
+      <div class="review">
+        <div class="review-header">
+          <span class="reviewer">فاطمه محمدی</span>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+        </div>
+        <p>کیفیت خوبی داشت ولی کمی کوچکتر از تصور بود.</p>
+        <span class="review-date">۱۴۰۲/۰۵/۰۸</span>
+      </div>
+      
+      <button class="add-review-btn">افزودن نظر</button>
+    </div>
+  </div>
+  
+  <!-- محصولات مرتبط -->
+  <section class="related-products">
+    <h2>محصولات مرتبط</h2>
+    <div class="products-container">
+      <!-- محصولات مشابه را اینجا نمایش دهید -->
+    </div>
+  </section>
+</main>
+
+<!-- فوتر مشابه صفحه اصلی -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>خرید حضوری</h3>
+      <p> آدرس: استان فارس ، شهرستان قیروکارزین ، شهرک علی آباد </p>
+    </div>
+    <div class="footer-section">
+      <h3>ارتباط با ما</h3>
+      <p>09173920397 مریدزاده </p>
+      <p>ایمیل: parspalm.ir@gmail.com </p>
+      <div class="social-links">
+        <a href="#" aria-label="اینستاگرام پارس پالم"><i class="fab fa-instagram"></i> parspalm</a> | 
+        <a href="#" aria-label="واتساپ پارس پالم"><i class="fab fa-whatsapp"></i> 09173920397</a> | 
+        <a href="#" aria-label="تلگرام پارس پالم"><i class="fab fa-telegram"></i> parspalm</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>لینک‌های مفید</h3>
+      <p><a href="about.html">درباره ما</a></p>
+      <p><a href="contact.html">تماس با ما</a></p>
+      <p><a href="privacy.html">حریم خصوصی</a></p>
+      <p><a href="terms.html">قوانین و مقررات</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>عضویت در خبرنامه</h3>
+      <p>با عضویت در خبرنامه از جدیدترین محصولات و تخفیف‌ها با خبر شوید.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="ایمیل خود را وارد کنید" required>
+        <button type="submit">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Pars Palm - تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+<script src="product.js"></script>
+</body>
+</html>

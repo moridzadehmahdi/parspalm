@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حساب کاربری - Pars Palm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+    <div class="logo">Pars Palm</div>
+
+    <!-- دکمه منوی همبرگری -->
+    <button class="menu-toggle" aria-label="باز کردن منو">
+      <span class="menu-icon">☰</span>
+      <span class="menu-text">منو</span>
+    </button>
+
+    <!-- نوار جستجو -->
+    <div class="search-bar">
+      <input type="search" placeholder="جستجوی محصولات..." aria-label="جستجو" />
+      <button class="search-icon"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- آیکون های کاربر و سبد خرید -->
+    <div class="header-icons">
+      <a href="account.html" class="user-icon" aria-label="حساب کاربری">
+        <i class="fas fa-user"></i>
+      </a>
+      <a href="cart.html" class="cart-icon" aria-label="سبد خرید">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+
+    <!-- منوی همبرگری بهبود یافته -->
+    <nav class="main-menu">
+      <div class="menu-header">
+        <span>محصولات ما</span>
+        <button class="menu-close" aria-label="بستن منو">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-item has-children">
+          <div class="menu-link">
+            <i class="fas fa-calendar-day"></i>
+            <span>خرما</span>
+            <i class="dropdown-icon fas fa-chevron-left"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="category.html?cat=dates&sub=special"><i class="fas fa-circle"></i> خاصویی</a></li>
+            <li><a href="category.html?cat=dates&sub=piarom"><i class="fas fa-circle"></i> پیارم</a></li>
+            <li><a href="category.html?cat=dates&sub=shahani"><i class="fas fa-circle"></i> شاهانی</a></li>
+            <li><a href="category.html?cat=dates&sub=kabkab"><i class="fas fa-circle"></i> کبکاب</a></li>
+            <li><a href="category.html?cat=dates&sub=rabbi"><i class="fas fa-circle"></i> ربی</a></li>
+            <li><a href="category.html?cat=dates&sub=zahedi"><i class="fas fa-circle"></i> زاهدی</a></li>
+            <li><a href="category.html?cat=dates&sub=stemran"><i class="fas fa-circle"></i> استعمران</a></li>
+          </ul>
+        </li>
+        
+        <li class="menu-item has-children">
+          <div class="menu-link">
+            <i class="fas fa-utensils"></i>
+            <span>مشتقات جذاب</span>
+            <i class="dropdown-icon fas fa-chevron-left"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="category.html?cat=derivatives&sub=halva"><i class="fas fa-circle"></i> حلوا</a></li>
+            <li><a href="category.html?cat=derivatives&sub=ardeh"><i class="fas fa-circle"></i> ارده</a></li>
+            <li><a href="category.html?cat=derivatives&sub=date-syrup"><i class="fas fa-circle"></i> شیره خرما</a></li>
+            <li><a href="category.html?cat=derivatives&sub=sweets"><i class="fas fa-circle"></i> شیرینی و کیک‌ها</a></li>
+            <li><a href="category.html?cat=derivatives&sub=fruit-roll"><i class="fas fa-circle"></i> لواشک</a></li>
+            <li><a href="category.html?cat=derivatives&sub=lemon-juice"><i class="fas fa-circle"></i> آبلیمو</a></li>
+            <li><a href="category.html?cat=derivatives&sub=verjuice"><i class="fas fa-circle"></i> آبغوره</a></li>
+            <li><a href="category.html?cat=derivatives&sub=vinegar"><i class="fas fa-circle"></i> سرکه</a></li>
+            <li><a href="category.html?cat=derivatives&sub=tomato-paste"><i class="fas fa-circle"></i> رب گوجه</a></li>
+            <li><a href="category.html?cat=derivatives&sub=jam"><i class="fas fa-circle"></i> مربا</a></li>
+          </ul>
+        </li>
+        
+        <li class="menu-item has-children">
+          <div class="menu-link">
+            <i class="fas fa-seedling"></i>
+            <span>سایر خشکبار</span>
+            <i class="dropdown-icon fas fa-chevron-left"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="category.html?cat=nuts&sub=fig"><i class="fas fa-circle"></i> انجیر</a></li>
+            <li><a href="category.html?cat=nuts&sub=pistachio"><i class="fas fa-circle"></i> پسته</a></li>
+            <li><a href="category.html?cat=nuts&sub=walnut"><i class="fas fa-circle"></i> گردو</a></li>
+            <li><a href="category.html?cat=nuts&sub=almond"><i class="fas fa-circle"></i> بادام</a></li>
+            <li><a href="category.html?cat=nuts&sub=hazelnut"><i class="fas fa-circle"></i> فندق</a></li>
+            <li><a href="category.html?cat=nuts&sub=raisin"><i class="fas fa-circle"></i> کشمش</a></li>
+          </ul>
+        </li>
+        
+        <li class="menu-item has-children">
+          <div class="menu-link">
+            <i class="fas fa-honey-pot"></i>
+            <span>عسل و فراورده‌ها</span>
+            <i class="dropdown-icon fas fa-chevron-left"></i>
+          </div>
+          <ul class="submenu">
+            <li><a href="category.html?cat=honey&sub=with-comb"><i class="fas fa-circle"></i> عسل با کندو</a></li>
+            <li><a href="category.html?cat=honey&sub=mountain"><i class="fas fa-circle"></i> عسل کوهی</a></li>
+            <li><a href="category.html?cat=honey&sub=sidr"><i class="fas fa-circle"></i> عسل کنار</a></li>
+            <li><a href="category.html?cat=honey&sub=royal-jelly"><i class="fas fa-circle"></i> ژله رویال</a></li>
+            <li><a href="category.html?cat=honey&sub=astragalus"><i class="fas fa-circle"></i> عسل گون</a></li>
+            <li><a href="category.html?cat=honey&sub=thyme"><i class="fas fa-circle"></i> عسل آویشن</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <div class="menu-footer">
+        <div class="user-actions">
+          <a href="account.html" class="user-action-link">
+            <i class="fas fa-user"></i>
+            حساب کاربری
+          </a>
+          <a href="cart.html" class="user-action-link">
+            <i class="fas fa-shopping-cart"></i>
+            سبد خرید
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+        
+        <div class="menu-social">
+          <a href="#" aria-label="اینستاگرام"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="واتساپ"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="تلگرام"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+    </nav>
+    <div class="menu-overlay"></div>
+  </div>
+</header>
+
+<main class="account-page">
+  <h1>حساب کاربری</h1>
+  
+  <div class="account-container">
+    <div class="account-sidebar">
+      <div class="user-profile">
+        <div class="user-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="user-info">
+          <div class="user-name">مهمان</div>
+          <div class="user-email">-</div>
+        </div>
+      </div>
+      
+      <nav class="account-menu">
+        <a href="#" class="menu-item active" data-tab="dashboard">
+          <i class="fas fa-home"></i> پیشخوان
+        </a>
+        <a href="#" class="menu-item" data-tab="orders">
+          <i class="fas fa-shopping-bag"></i> سفارش‌ها
+        </a>
+        <a href="#" class="menu-item" data-tab="addresses">
+          <i class="fas fa-map-marker-alt"></i> آدرس‌ها
+        </a>
+        <a href="#" class="menu-item" data-tab="account-details">
+          <i class="fas fa-user"></i> جزئیات حساب
+        </a>
+        <a href="#" class="menu-item" data-tab="wishlist">
+          <i class="fas fa-heart"></i> علاقه‌مندی‌ها
+        </a>
+        <a href="#" class="menu-item logout">
+          <i class="fas fa-sign-out-alt"></i> خروج
+        </a>
+      </nav>
+    </div>
+    
+    <div class="account-content">
+      <div class="tab-content active" id="dashboard">
+        <h2>خلاصه فعالیت‌ها</h2>
+        <div class="dashboard-stats">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">۰</div>
+              <div class="stat-label">سفارش‌ها</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">۰</div>
+              <div class="stat-label">علاقه‌مندی‌ها</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="stat-info">
+              <div class="stat-number">۰</div>
+              <div class="stat-label">آدرس‌ها</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="recent-orders">
+          <h3>آخرین سفارش‌ها</h3>
+          <p>هنوز سفارشی ثبت نکرده‌اید.</p>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="orders">
+        <h2>سفارش‌های من</h2>
+        <p>لیست سفارش‌های شما اینجا نمایش داده می‌شود.</p>
+      </div>
+      
+      <!-- سایر تب‌ها -->
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>خرید حضوری</h3>
+      <p> آدرس: استان فارس ، شهرستان قیروکارزین ، شهرک علی آباد </p>
+    </div>
+    <div class="footer-section">
+      <h3>ارتباط با ما</h3>
+      <p>09173920397 مریدزاده </p>
+      <p>ایمیل: parspalm.ir@gmail.com </p>
+      <div class="social-links">
+        <a href="#" aria-label="اینستاگرام پارس پالم"><i class="fab fa-instagram"></i> parspalm</a> | 
+        <a href="#" aria-label="واتساپ پارس پالم"><i class="fab fa-whatsapp"></i> 09173920397</a> | 
+        <a href="#" aria-label="تلگرام پارس پالم"><i class="fab fa-telegram"></i> parspalm</a>
+      </div>
+    </div>
+    <div class="footer-section">
+      <h3>لینک‌های مفید</h3>
+      <p><a href="about.html">درباره ما</a></p>
+      <p><a href="contact.html">تماس با ما</a></p>
+      <p><a href="privacy.html">حریم خصوصی</a></p>
+      <p><a href="terms.html">قوانین و مقررات</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>عضویت در خبرنامه</h3>
+      <p>با عضویت در خبرنامه از جدیدترین محصولات و تخفیف‌ها با خبر شوید.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="ایمیل خود را وارد کنید" required>
+        <button type="submit">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Pars Palm - تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+<script src="account.js"></script>
+</body>
+</html>
