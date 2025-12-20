@@ -25,10 +25,14 @@
     <div class="search-bar">
       <input type="search" placeholder="جستجوی محصولات..." aria-label="جستجو" />
       <button class="search-icon"><i class="fas fa-search"></i></button>
+      <div class="search-results" aria-live="polite"></div>
     </div>
 
     <!-- آیکون های کاربر و سبد خرید -->
     <div class="header-icons">
+      <button class="theme-toggle" type="button" aria-label="حالت تیره">
+        <i class="fas fa-moon"></i>
+      </button>
       <a href="account.html" class="user-icon" aria-label="حساب کاربری">
         <i class="fas fa-user"></i>
       </a>
@@ -242,9 +246,9 @@
   <!-- تب‌های اطلاعات محصول -->
   <div class="product-tabs">
     <div class="tabs">
-      <button class="tab-link active" onclick="openTab('description')">توضیحات کامل</button>
-      <button class="tab-link" onclick="openTab('specs')">مشخصات فنی</button>
-      <button class="tab-link" onclick="openTab('reviews')">نظرات (2)</button>
+      <button class="tab-link active" onclick="openTab(event, 'description')">توضیحات کامل</button>
+      <button class="tab-link" onclick="openTab(event, 'specs')">مشخصات فنی</button>
+      <button class="tab-link" onclick="openTab(event, 'reviews')">نظرات (2)</button>
     </div>
     
     <div id="description" class="tab-content active">

@@ -28,10 +28,14 @@
     <div class="search-bar">
       <input type="search" placeholder="جستجوی محصولات..." aria-label="جستجو" />
       <button class="search-icon"><i class="fas fa-search"></i></button>
+      <div class="search-results" aria-live="polite"></div>
     </div>
 
     <!-- آیکون های کاربر و سبد خرید -->
     <div class="header-icons">
+      <button class="theme-toggle" type="button" aria-label="حالت تیره">
+        <i class="fas fa-moon"></i>
+      </button>
       <a href="account.html" class="user-icon" aria-label="حساب کاربری">
         <i class="fas fa-user"></i>
       </a>
@@ -171,25 +175,25 @@
     <div class="offer-products">
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
       <div class="products-scroll">
-        <article class="offer-product">
+        <article class="offer-product" data-product-name="خرما پیارم ویژه">
           <img src="assets/images/offer1.jpg" alt="خرما پیارم با تخفیف ویژه" loading="lazy" />
           <h4>خرما پیارم ویژه</h4>
           <span class="price"><del>180,000</del> 145,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=1'">خرید</button>
         </article>
-        <article class="offer-product">
+        <article class="offer-product" data-product-name="عسل کوهی خالص">
           <img src="assets/images/offer2.jpg" alt="عسل طبیعی کوهی" loading="lazy" />
           <h4>عسل کوهی خالص</h4>
           <span class="price"><del>220,000</del> 185,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=2'">خرید</button>
         </article>
-        <article class="offer-product">
+        <article class="offer-product" data-product-name="حلوا ارده اعلا">
           <img src="assets/images/offer3.jpg" alt="حلوا ارده ممتاز" loading="lazy" />
           <h4>حلوا ارده اعلا</h4>
           <span class="price"><del>85,000</del> 68,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=3'">خرید</button>
         </article>
-        <article class="offer-product">
+        <article class="offer-product" data-product-name="گردوی تازه محلی">
           <img src="assets/images/offer4.jpg" alt="گردوی تازه" loading="lazy" />
           <h4>گردوی تازه محلی</h4>
           <span class="price"><del>120,000</del> 95,000 تومان</span>
@@ -208,7 +212,7 @@
     <div class="products-container">
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
       <div class="products-scroll">
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما پیارم ممتاز">
           <img src="assets/images/product1.jpg" alt="خرما پیارم ممتاز - خرمای درجه یک هرمزگان" loading="lazy" />
           <h3>خرما پیارم ممتاز</h3>
           <p>خرمای درجه یک هرمزگان با طعمی شیرین و بافت نرم.</p>
@@ -216,7 +220,7 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=5'">خرید</button>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما کبکاب تازه">
           <img src="assets/images/product2.jpg" alt="خرما کبکاب تازه - خرمای تازه بوشهری" loading="lazy" />
           <h3> خرما کبکاب تازه</h3>
           <p>خرمای تازه و خوش‌طعم بوشهری.</p>
@@ -224,7 +228,7 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=6'">خرید</button>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما شاهانی شیراز">
           <img src="assets/images/product3.jpg" alt="خرما شاهانی شیراز - خرمای شیرین لذیذ" loading="lazy" />
           <h3>خرما شاهانی شیراز</h3>
           <p>خرمای شیرین و لذیذ با بافتی لطیف.</p>
@@ -232,7 +236,7 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=7'">خرید</button>
         </article>
         
-        <article class="product-card">
+        <article class="product-card" data-product-name="گرده نخل تازه">
           <img src="assets/images/product6.jpg" alt="گرده نخل تازه" loading="lazy" />
           <h3>گرده نخل تازه</h3>
           <p>گرده نخل طبیعی با خواص درمانی.</p>
@@ -240,7 +244,7 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=8'">خرید</button>
         </article>
         
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرمای زاهدی">
           <img src="assets/images/product7.jpg" alt="خرمای زاهدی" loading="lazy" />
           <h3>خرمای زاهدی</h3>
           <p>خرمای زاهدی مرغوب با طعمی دلچسب.</p>
@@ -248,7 +252,7 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=9'">خرید</button>
         </article>
         
-        <article class="product-card">
+        <article class="product-card" data-product-name="عسل طبیعی گون">
           <img src="assets/images/product4.jpg" alt="عسل طبیعی گون" loading="lazy" />
           <h3>عسل طبیعی گون</h3>
           <p>عسل خالص گون با خواص دارویی.</p>
@@ -256,7 +260,7 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=10'">خرید</button>
         </article>
         
-        <article class="product-card">
+        <article class="product-card" data-product-name="حلوا ارده ممتاز">
           <img src="assets/images/product5.jpg" alt="حلوا ارده ممتاز" loading="lazy" />
           <h3>حلوا ارده ممتاز</h3>
           <p>حلوا ارده طبیعی و خالص.</p>
@@ -296,21 +300,21 @@
     <div class="products-container">
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
       <div class="products-scroll">
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما خاصویی">
           <img src="assets/images/discount1.jpg" alt="خرما خاصویی با تخفیف ویژه" loading="lazy" />
           <h3>خرما خاصویی</h3>
           <p>خرمای شیرین و مغذی با تخفیف ویژه.</p>
           <span class="price"><del>110,000</del> 95,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=12'">خرید</button>
         </article>
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما پیارم درجه یک">
           <img src="assets/images/discount2.jpg" alt="خرما پیارم درجه یک با تخفیف" loading="lazy" />
           <h3>خرما پیارم درجه یک</h3>
           <p>خرمای صادراتی با تخفیف محدود.</p>
           <span class="price"><del>180,000</del> 160,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=13'">خرید</button>
         </article>
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما کبکاب">
           <img src="assets/images/discount3.jpg" alt="خرما کبکاب با تخفیف" loading="lazy" />
           <h3>خرما کبکاب</h3>
           <p>خرمای تازه و مرغوب بوشهر.</p>
@@ -319,7 +323,7 @@
         </article>
         
         <!-- محصولات جدید اضافه شده -->
-        <article class="product-card">
+        <article class="product-card" data-product-name="عسل طبیعی کنار">
           <img src="assets/images/discount4.jpg" alt="عسل طبیعی کنار" loading="lazy" />
           <h3>عسل طبیعی کنار</h3>
           <p>عسل خالص کنار با خاصیت درمانی.</p>
@@ -327,7 +331,7 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=15'">خرید</button>
         </article>
         
-        <article class="product-card">
+        <article class="product-card" data-product-name="پسته رفسنجان">
           <img src="assets/images/discount5.jpg" alt="پسته رفسنجان" loading="lazy" />
           <h3>پسته رفسنجان</h3>
           <p>پسته مرغوب رفسنجان درجه یک.</p>
@@ -347,21 +351,21 @@
     <div class="products-container">
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
       <div class="products-scroll">
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما شاهانی">
           <img src="assets/images/best1.jpg" alt="خرما شاهانی با کیفیت عالی" loading="lazy" />
           <h3>خرما شاهانی</h3>
           <p>خرمای محبوب مشتریان با کیفیت عالی.</p>
           <span class="price">135,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=17'">خرید</button>
         </article>
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما پیارم ممتاز">
           <img src="assets/images/best2.jpg" alt="خرما پیارم ممتاز صادراتی" loading="lazy" />
           <h3>خرما پیارم ممتاز</h3>
           <p>خرمای درجه یک صادراتی.</p>
           <span class="price">150,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=18'">خرید</button>
         </article>
-        <article class="product-card">
+        <article class="product-card" data-product-name="خرما خاصویی">
           <img src="assets/images/best3.jpg" alt="خرما خاصویی محبوب جنوب" loading="lazy" />
           <h3>خرما خاصویی</h3>
           <p>خرمای شیرین و محبوب جنوب.</p>
@@ -370,7 +374,7 @@
         </article>
         
         <!-- محصولات جدید اضافه شده -->
-        <article class="product-card">
+        <article class="product-card" data-product-name="ارده خالص">
           <img src="assets/images/best4.jpg" alt="ارده خالص" loading="lazy" />
           <h3>ارده خالص</h3>
           <p>ارده طبیعی بدون افزودنی.</p>
@@ -378,7 +382,7 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=20'">خرید</button>
         </article>
         
-        <article class="product-card">
+        <article class="product-card" data-product-name="شیره خرما">
           <img src="assets/images/best5.jpg" alt="شیره خرما" loading="lazy" />
           <h3>شیره خرما</h3>
           <p>شیره خرما طبیعی و خالص.</p>
@@ -419,14 +423,14 @@
       <div class="products-container">
         <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
         <div class="products-scroll">
-          <article class="product-card">
+          <article class="product-card" data-product-name="خرما پیارم">
             <img src="assets/images/date1.jpg" alt="خرما پیارم مرغوب جنوب" loading="lazy" />
             <h3>خرما پیарم</h3>
             <p>خرمای مرغوب جنوب ایران.</p>
             <span class="price">150,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=22'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="خرما خاصویی">
             <img src="assets/images/date2.jpg" alt="خرما خاصویی شیرین" loading="lazy" />
             <h3>خرما خاصویی</h3>
             <p>خرمای شیرین و محبوب.</p>
@@ -435,21 +439,21 @@
           </article>
           
           <!-- محصولات جدید اضافه شده -->
-          <article class="product-card">
+          <article class="product-card" data-product-name="خرما کبکاب">
             <img src="assets/images/date6.jpg" alt="خرما کبکاب" loading="lazy" />
             <h3>خرما کبکاب</h3>
             <p>خرمای کبکاب تازه و مرغوب.</p>
             <span class="price">120,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=24'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="خرما شاهانی">
             <img src="assets/images/date7.jpg" alt="خرما شاهانی" loading="lazy" />
             <h3>خرما شاهانی</h3>
             <p>خرمای شاهانی شیراز.</p>
             <span class="price">140,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=25'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="خرما هلیله">
             <img src="assets/images/date8.jpg" alt="خرما هلیله" loading="lazy" />
             <h3>خرما هلیله</h3>
             <p>خرمای هلیله خوش طعم.</p>
@@ -467,15 +471,15 @@
       <div class="products-container">
         <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
         <div class="products-scroll">
-          <article class="product-card">
+          <article class="product-card" data-product-name="لواشک انار">
             <img src="assets/images/lavashak1.jpg" alt="لواشک انار ترش" loading="lazy" />
             <h3>لواشک انار</h3>
             <p>لواشک خوشمزه و ترش.</p>
             <span class="price">30,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=27'">خرید</button>
           </article>
-          <article class="product-card">
-            <img src="assets/images/lavashak2.jpg" alt="لواشک زردآلو شیرین" loading="lasy" />
+          <article class="product-card" data-product-name="لواشک زردآلو">
+            <img src="assets/images/lavashak2.jpg" alt="لواشک زردآلو شیرین" loading="lazy" />
             <h3>لواشک زردآلو</h3>
             <p>لواشک شیرین و نرم.</p>
             <span class="price">28,000 تومان</span>
@@ -483,21 +487,21 @@
           </article>
           
           <!-- محصولات جدید اضافه شده -->
-          <article class="product-card">
+          <article class="product-card" data-product-name="لواشک آلوچه">
             <img src="assets/images/lavashak3.jpg" alt="لواشک آلوچه" loading="lazy" />
             <h3>لواشک آلوچه</h3>
             <p>لواشک ترش مزه آلوچه.</p>
             <span class="price">25,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=29'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="لواشک تمشک">
             <img src="assets/images/lavashak4.jpg" alt="لواشک تمشک" loading="lazy" />
             <h3>لواشک تمشک</h3>
             <p>لواشک خوشمزه تمشک.</p>
             <span class="price">32,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=30'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="لواشک مخلوط">
             <img src="assets/images/lavashak5.jpg" alt="لواشک مخلوط" loading="lazy" />
             <h3>لواشک مخلوط</h3>
             <p>مجموعه‌ای از لواشک‌های مختلف.</p>
@@ -519,7 +523,7 @@
       <div class="products-container">
         <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
         <div class="products-scroll">
-          <article class="product-card">
+          <article class="product-card" data-product-name="حلوا خرما">
             <img src="assets/images/halva.jpg" alt="حلوا خرما مقوی" loading="lazy" />
             <h3>حلوا خرما</h3>
             <p>حلوا خرمایی مقوی.</p>
@@ -528,28 +532,28 @@
           </article>
           
           <!-- محصولات جدید اضافه شده -->
-          <article class="product-card">
+          <article class="product-card" data-product-name="شیره خرما">
             <img src="assets/images/shire-kharma.jpg" alt="شیره خرما" loading="lazy" />
             <h3>شیره خرما</h3>
             <p>شیره خرما طبیعی و خالص.</p>
             <span class="price">55,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=33'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="شیره انگور">
             <img src="assets/images/shire-angoor.jpg" alt="شیره انگور" loading="lazy" />
             <h3>شیره انگور</h3>
             <p>شیره انگور مرغوب.</p>
             <span class="price">60,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=34'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="سه شیره">
             <img src="assets/images/se-shire.jpg" alt="سه شیره" loading="lazy" />
             <h3>سه شیره</h3>
             <p>مخلوط سه شیره طبیعی.</p>
             <span class="price">75,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=35'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="حلوا ارده">
             <img src="assets/images/halva-arde.jpg" alt="حلوا ارده" loading="lazy" />
             <h3>حلوا ارده</h3>
             <p>حلوا ارده اعلا.</p>
@@ -567,7 +571,7 @@
       <div class="products-container">
         <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
         <div class="products-scroll">
-          <article class="product-card">
+          <article class="product-card" data-product-name="کیک خرما">
             <img src="assets/images/cake.jpg" alt="کیک خرما تازه" loading="lazy" />
             <h3>کیک خرما</h3>
             <p>کیک تازه و خوش‌طعم.</p>
@@ -576,28 +580,28 @@
           </article>
           
           <!-- محصولات جدید اضافه شده -->
-          <article class="product-card">
+          <article class="product-card" data-product-name="خرما روغنی">
             <img src="assets/images/kharma-roghani.jpg" alt="خرما روغنی" loading="lazy" />
             <h3>خرما روغنی</h3>
             <p>خرما روغنی تازه و مرغوب.</p>
             <span class="price">85,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=38'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="رولت خرما">
             <img src="assets/images/rollet-kharma.jpg" alt="رولت خرما" loading="lazy" />
             <h3>رولت خرما</h3>
             <p>رولت خرما با طعمی بی‌نظیر.</p>
             <span class="price">50,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=39'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="خرما نارگیلی">
             <img src="assets/images/kharma-nargili.jpg" alt="خرما نارگیلی" loading="lazy" />
             <h3>خرما نارگیلی</h3>
             <p>خرما با پوشش نارگیل.</p>
             <span class="price">70,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=40'">خرید</button>
           </article>
-          <article class="product-card">
+          <article class="product-card" data-product-name="چیپس خرما">
             <img src="assets/images/chips-kharma.jpg" alt="چیپس خرما" loading="lazy" />
             <h3>چیپس خرما</h3>
             <p>چیپس خرما ترد و خوشمزه.</p>
