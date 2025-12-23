@@ -131,6 +131,10 @@ const updateCartCount = () => {
     const cartCountElements = document.querySelectorAll('.cart-count');
     cartCountElements.forEach(element => {
       element.textContent = totalItems;
+ codex/review-code-9j1lmp
+      element.style.display = totalItems > 0 ? 'flex' : 'none';
+
+ main
     });
   } catch (error) {
     console.error('خطا در به روزرسانی تعداد سبد خرید:', error);
