@@ -1,88 +1,39 @@
 // account.js - اسکریپت صفحه حساب کاربری
-document.addEventListener('DOMContentLoaded', function() {
-  // مدیریت تب‌ها
-  const tabLinks = document.querySelectorAll('.menu-item[data-tab]');
-  const tabContents = document.querySelectorAll('.tab-content');
-  
-  tabLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // حذف کلاس active از همه تب‌ها
-      tabLinks.forEach(item => item.classList.remove('active'));
-      tabContents.forEach(content => content.classList.remove('active'));
-      
-      // اضافه کردن کلاس active به تب انتخاب شده
-      this.classList.add('active');
-      const tabId = this.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
-    });
-  });
-  
-  // مدیریت خروج
-  const logoutBtn = document.querySelector('.logout');
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      if (confirm('آیا از خروج از حساب کاربری خود مطمئن هستید؟')) {
-        // پاک کردن اطلاعات کاربر از localStorage
-        localStorage.removeItem('user');
-        // هدایت به صفحه اصلی
-        window.location.href = 'index.html';
-      }
-    });
-  }
-  
-  // بارگذاری اطلاعات کاربر
-  loadUserData();
-});
+const formatDate = (dateString) => {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('fa-IR', options);
+};
 
-function loadUserData() {
-  const userData = JSON.parse(localStorage.getItem('user')) || {
-    name: 'مهمان',
-    email: '-'
+const formatPrice = (price) => new Intl.NumberFormat('fa-IR').format(price);
+
+const getStatusText = (status) => {
+  const statusMap = {
+    pending: 'در انتظار پرداخت',
+    processing: 'در حال پردازش',
+    completed: 'تکمیل شده',
+    cancelled: 'لغو شده'
   };
-  
-  // به روز کردن اطلاعات در صفحه
-  document.querySelector('.user-name').textContent = userData.name;
-  document.querySelector('.user-email').textContent = userData.email;
-  
-  // بارگذاری آمار
-  loadUserStats();
-}
 
-function loadUserStats() {
-  // در اینجا می‌توانید اطلاعات آماری کاربر را از سرور دریافت کنید
-  // فعلاً با اطلاعات نمونه کار می‌کند
-  const orders = JSON.parse(localStorage.getItem('orders')) || [];
-  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-  const addresses = JSON.parse(localStorage.getItem('addresses')) || [];
-  
-  document.querySelectorAll('.stat-number')[0].textContent = orders.length;
-  document.querySelectorAll('.stat-number')[1].textContent = wishlist.length;
-  document.querySelectorAll('.stat-number')[2].textContent = addresses.length;
-  
-  // نمایش آخرین سفارش‌ها
-  displayRecentOrders(orders);
-}
+  return statusMap[status] || status;
+};
 
-function displayRecentOrders(orders) {
+const displayRecentOrders = (orders) => {
   const recentOrdersContainer = document.querySelector('.recent-orders');
-  
+  if (!recentOrdersContainer) return;
+
   if (orders.length === 0) {
-    recentOrdersContainer.innerHTML = '<p>هنوز سفارشی ثبت نکرده‌اید.</p>';
+    recentOrdersContainer.innerHTML = '<p>هنوز سفارشی ثبت نکرده اید.</p>';
     return;
   }
-  
-  // مرتب کردن سفارش‌ها بر اساس تاریخ (جدیدترین اول)
+
   const sortedOrders = orders.sort((a, b) => new Date(b.date) - new Date(a.date));
-  const recentOrders = sortedOrders.slice(0, 5); // 5 سفارش آخر
-  
+  const recentOrders = sortedOrders.slice(0, 5);
+
   let ordersHTML = `
-    <h3>آخرین سفارش‌ها</h3>
+    <h3>آخرین سفارش ها</h3>
     <div class="orders-list">
   `;
-  
+
   recentOrders.forEach(order => {
     ordersHTML += `
       <div class="order-item">
@@ -97,31 +48,83 @@ function displayRecentOrders(orders) {
       </div>
     `;
   });
-  
+
   ordersHTML += `
     </div>
-    <a href="#" class="view-all-orders">مشاهده همه سفارش‌ها</a>
+    <a href="#" class="view-all-orders">مشاهده همه سفارش ها</a>
   `;
-  
+
   recentOrdersContainer.innerHTML = ordersHTML;
-}
+};
 
-function formatDate(dateString) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(dateString).toLocaleDateString('fa-IR', options);
-}
+const loadUserStats = () => {
+  const orders = JSON.parse(localStorage.getItem('orders')) || [];
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  const addresses = JSON.parse(localStorage.getItem('addresses')) || [];
 
-function formatPrice(price) {
-  return new Intl.NumberFormat('fa-IR').format(price);
-}
+  const statNumbers = document.querySelectorAll('.stat-number');
+  if (statNumbers.length >= 3) {
+    statNumbers[0].textContent = orders.length;
+    statNumbers[1].textContent = wishlist.length;
+    statNumbers[2].textContent = addresses.length;
+  }
 
-function getStatusText(status) {
-  const statusMap = {
-    'pending': 'در انتظار پرداخت',
-    'processing': 'در حال پردازش',
-    'completed': 'تکمیل شده',
-    'cancelled': 'لغو شده'
+  displayRecentOrders(orders);
+};
+
+const loadUserData = () => {
+  const userData = JSON.parse(localStorage.getItem('user')) || {
+    name: 'مهمان',
+    email: '-'
   };
-  
-  return statusMap[status] || status;
-}
+
+  const userName = document.querySelector('.user-name');
+  const userEmail = document.querySelector('.user-email');
+
+  if (userName) userName.textContent = userData.name;
+  if (userEmail) userEmail.textContent = userData.email;
+
+  loadUserStats();
+};
+
+const initTabs = () => {
+  const tabLinks = document.querySelectorAll('.menu-item[data-tab]');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  if (tabLinks.length === 0) return;
+
+  tabLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      tabLinks.forEach(item => item.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      this.classList.add('active');
+      const tabId = this.getAttribute('data-tab');
+      const tabContent = document.getElementById(tabId);
+      if (tabContent) {
+        tabContent.classList.add('active');
+      }
+    });
+  });
+};
+
+const initLogout = () => {
+  const logoutBtn = document.querySelector('.logout');
+  if (!logoutBtn) return;
+
+  logoutBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (confirm('آیا از خروج از حساب کاربری خود مطمئن هستید؟')) {
+      localStorage.removeItem('user');
+      window.location.href = 'index.html';
+    }
+  });
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+  initTabs();
+  initLogout();
+  loadUserData();
+});
