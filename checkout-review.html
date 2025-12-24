@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>بازبینی سفارش - Pars Palm</title>
+
+  <!-- استایل‌های اصلی پروژه -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="checkout.css" />
+
+  <!-- اگر فونت‌آوسام داری -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+  <!-- Header (اگر در صفحات دیگر هدر مشترک داری، همان را کپی کن) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Pars Palm</a>
+
+      <nav class="header-actions">
+        <a class="cart-link" href="cart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+
+        <button class="theme-toggle" type="button" aria-label="حالت تیره/روشن">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container checkout-page">
+    <div class="checkout-layout">
+      <!-- ستون اصلی -->
+      <section class="checkout-main">
+        <h1 class="checkout-title">بازبینی سفارش</h1>
+
+        <!-- پیام خطا/هشدار -->
+        <div id="reviewAlert" class="review-alert" style="display:none;"></div>
+
+        <!-- اطلاعات گیرنده -->
+        <div class="checkout-card">
+          <div class="card-header">
+            <h2>اطلاعات گیرنده</h2>
+            <a class="link-btn" href="checkout.html">ویرایش</a>
+          </div>
+
+          <div id="addressBox" class="address-box">
+            <!-- با JS پر می‌شود -->
+          </div>
+        </div>
+
+        <!-- روش ارسال / پرداخت -->
+        <div class="checkout-card">
+          <h2>روش ارسال و پرداخت</h2>
+
+          <div class="review-grid">
+            <div class="review-field">
+              <label class="review-label">ارسال</label>
+              <div class="review-value" id="shippingMethodText">ارسال استاندارد</div>
+              <div class="review-hint">ارسال رایگان برای سفارش‌های بالای ۳۰۰,۰۰۰ تومان</div>
+            </div>
+
+            <div class="review-field">
+              <label class="review-label">روش پرداخت</label>
+              <div class="payment-methods">
+                <label class="pm">
+                  <input type="radio" name="payment" value="online" checked />
+                  پرداخت آنلاین
+                </label>
+                <label class="pm">
+                  <input type="radio" name="payment" value="cod" />
+                  پرداخت در محل
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- آیتم‌های سفارش -->
+        <div class="checkout-card">
+          <div class="card-header">
+            <h2>آیتم‌های سفارش</h2>
+            <a class="link-btn" href="cart.html">ویرایش سبد خرید</a>
+          </div>
+
+          <div id="reviewItems" class="review-items">
+            <!-- با JS پر می‌شود -->
+          </div>
+        </div>
+
+        <!-- دکمه‌ها -->
+        <div class="review-actions">
+          <button type="button" class="secondary-btn" id="backToCheckoutBtn">بازگشت</button>
+          <button type="button" class="primary-btn" id="confirmOrderBtn">تایید نهایی سفارش</button>
+        </div>
+      </section>
+
+      <!-- ستون خلاصه -->
+      <aside class="checkout-aside">
+        <div class="checkout-card">
+          <h2>خلاصه پرداخت</h2>
+
+          <div class="summary-row">
+            <span>جمع جزء</span>
+            <strong id="reviewSubtotal">۰ تومان</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>هزینه ارسال</span>
+            <strong id="reviewShipping">۰ تومان</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>تخفیف</span>
+            <strong id="reviewDiscount">۰ تومان</strong>
+          </div>
+
+          <div class="summary-divider"></div>
+
+          <div class="summary-row total">
+            <span>مبلغ نهایی</span>
+            <strong id="reviewTotal">۰ تومان</strong>
+          </div>
+
+          <div class="review-note">
+            با تایید سفارش، اطلاعات شما ثبت می‌شود. (پرداخت واقعی هنوز پیاده‌سازی نشده است.)
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Pars Palm</div>
+  </footer>
+
+  <!-- ترتیب اسکریپت‌ها مهم است -->
+  <script src="script.js"></script>
+  <script src="checkout-review.js"></script>
+</body>
+</html>
