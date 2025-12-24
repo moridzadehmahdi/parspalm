@@ -115,3 +115,106 @@
     grid-template-columns: 1fr;
   }
 }
+/* ---------------- Order Success Page ---------------- */
+.success-card{
+  max-width: 760px;
+  margin: 40px auto;
+  background: var(--card-bg, #fff);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.success-header{
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.success-icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,.06);
+  flex: 0 0 44px;
+}
+
+.success-title{
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.success-subtitle{
+  margin: 6px 0 0;
+  opacity: .85;
+  line-height: 1.9;
+}
+
+.success-divider{
+  height: 1px;
+  background: rgba(0,0,0,.08);
+  margin: 16px 0;
+}
+
+.success-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.success-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,.12);
+}
+
+.success-btn.primary{
+  background: rgba(0,0,0,.9);
+  color: #fff;
+  border-color: rgba(0,0,0,.9);
+}
+
+.success-btn.secondary{
+  background: transparent;
+  color: inherit;
+}
+
+.success-btn:hover{
+  transform: translateY(-1px);
+}
+
+/* باکس اطلاعات سفارش */
+#successBox .address-box{
+  background: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+#successBox .address-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(0,0,0,.12);
+}
+
+#successBox .address-row:last-child{
+  border-bottom: 0;
+}
+
+@media (max-width: 520px){
+  #successBox .address-row{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -5,22 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>بازبینی سفارش - Pars Palm</title>
 
-  <!-- استایل‌های اصلی پروژه -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="checkout.css" />
 
-  <!-- اگر فونت‌آوسام داری -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 
-<body>
-  <!-- Header (اگر در صفحات دیگر هدر مشترک داری، همان را کپی کن) -->
-  <header class="site-header">
-    <div class="container header-inner">
+<body class="checkout-review-page">
+
+  <!-- Header (هماهنگ با style.css) -->
+  <header>
+    <div class="header-container">
+      <button class="menu-toggle" type="button" aria-label="منو">
+        <span class="menu-icon">☰</span>
+      </button>
+
       <a class="logo" href="index.html">Pars Palm</a>
 
-      <nav class="header-actions">
-        <a class="cart-link" href="cart.html">
+      <!-- اگر سرچ در همه صفحات داری، همین را نگه دار -->
+      <div class="search-bar">
+        <input type="search" placeholder="جستجوی محصولات..." aria-label="جستجو">
+        <button class="search-icon" type="button" aria-label="جستجو">
+          <i class="fas fa-search"></i>
+        </button>
+        <div class="search-results"></div>
+      </div>
+
+      <div class="header-icons">
+        <a class="cart-icon" href="cart.html" aria-label="سبد خرید">
           <i class="fas fa-shopping-cart"></i>
           <span class="cart-count">0</span>
         </a>
@@ -28,17 +40,33 @@
         <button class="theme-toggle" type="button" aria-label="حالت تیره/روشن">
           <i class="fas fa-moon"></i>
         </button>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <main class="container checkout-page">
+  <!-- منوی کناری (اگر در صفحات دیگر داری، همان را کپی کن؛ اگر نداری، حذفش کن) -->
+  <div class="menu-overlay"></div>
+  <nav class="main-menu">
+    <div class="menu-header">
+      <span>منو</span>
+      <button class="menu-close" type="button" aria-label="بستن">✖</button>
+    </div>
+
+    <ul class="menu-list">
+      <li class="menu-item"><a class="menu-link" href="index.html">صفحه اصلی</a></li>
+      <li class="menu-item"><a class="menu-link" href="cart.html">سبد خرید</a></li>
+      <li class="menu-item"><a class="menu-link" href="account.html">حساب کاربری</a></li>
+    </ul>
+
+    <div class="menu-footer"></div>
+  </nav>
+
+  <main class="checkout-page">
     <div class="checkout-layout">
       <!-- ستون اصلی -->
       <section class="checkout-main">
         <h1 class="checkout-title">بازبینی سفارش</h1>
 
-        <!-- پیام خطا/هشدار -->
         <div id="reviewAlert" class="review-alert" style="display:none;"></div>
 
         <!-- اطلاعات گیرنده -->
@@ -47,10 +75,7 @@
             <h2>اطلاعات گیرنده</h2>
             <a class="link-btn" href="checkout.html">ویرایش</a>
           </div>
-
-          <div id="addressBox" class="address-box">
-            <!-- با JS پر می‌شود -->
-          </div>
+          <div id="addressBox" class="address-box"></div>
         </div>
 
         <!-- روش ارسال / پرداخت -->
@@ -87,12 +112,9 @@
             <a class="link-btn" href="cart.html">ویرایش سبد خرید</a>
           </div>
 
-          <div id="reviewItems" class="review-items">
-            <!-- با JS پر می‌شود -->
-          </div>
+          <div id="reviewItems" class="review-items"></div>
         </div>
 
-        <!-- دکمه‌ها -->
         <div class="review-actions">
           <button type="button" class="secondary-btn" id="backToCheckoutBtn">بازگشت</button>
           <button type="button" class="primary-btn" id="confirmOrderBtn">تایید نهایی سفارش</button>
@@ -134,8 +156,8 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">© Pars Palm</div>
+  <footer>
+    <div class="footer-bottom">Pars Palm ©</div>
   </footer>
 
   <!-- ترتیب اسکریپت‌ها مهم است -->

@@ -1,101 +1,91 @@
-// checkout-review.js - صفحه بازبینی سفارش
+// checkout-review.js
 (() => {
-  const formatPrice =
-    window.PARSPALM_FORMAT_PRICE ||
-    function (n) {
-      try {
-        return new Intl.NumberFormat('fa-IR').format(n);
-      } catch {
-        return String(n);
-      }
-    };
+  const PLACEHOLDER_IMG =
+    (window.PARSPALM_PLACEHOLDER_IMG && String(window.PARSPALM_PLACEHOLDER_IMG)) ||
+    'assets/images/products/placeholder.jpg';
 
   const getSafeImage =
     window.getSafeImage ||
     function (src) {
-      return typeof src === 'string' && src.trim() ? src.trim() : 'assets/images/products/placeholder.jpg';
+      if (!src || typeof src !== 'string') return PLACEHOLDER_IMG;
+      const s = src.trim();
+      return s ? s : PLACEHOLDER_IMG;
     };
 
   const applyImgFallback =
     window.applyImgFallback ||
     function (imgEl) {
       if (!imgEl) return;
-      imgEl.addEventListener(
-        'error',
-        () => {
-          imgEl.src = 'assets/images/products/placeholder.jpg';
-        },
-        { once: true }
-      );
+      imgEl.addEventListener('error', () => (imgEl.src = PLACEHOLDER_IMG), { once: true });
+    };
+
+  const formatPrice =
+    window.PARSPALM_FORMAT_PRICE ||
+    function (n) {
+      try { return new Intl.NumberFormat('fa-IR').format(n); } catch { return String(n); }
     };
 
   const getWeightText = (weight) => {
-    const weights = { '500g': '500 گرم', '1kg': '1 کیلوگرم', '2kg': '2 کیلوگرم' };
-    return weights[weight] || weight;
+    const map = { '500g': '500 گرم', '1kg': '1 کیلوگرم', '2kg': '2 کیلوگرم' };
+    return map[weight] || weight || '-';
   };
 
   const readCart = () => JSON.parse(localStorage.getItem('cart')) || [];
   const readAddress = () => JSON.parse(localStorage.getItem('userAddress')) || null;
 
-  const alertBox = (message) => {
-    const el = document.getElementById('reviewAlert');
-    if (!el) return;
-    el.textContent = message;
-    el.style.display = 'block';
+  const calcTotals = (cart) => {
+    const subtotal = cart.reduce((sum, it) => sum + (Number(it.price) || 0) * (Number(it.quantity) || 1), 0);
+    const shipping = subtotal > 300000 ? 0 : (cart.length ? 25000 : 0);
+    const discount = 0;
+    const total = subtotal + shipping - discount;
+    return { subtotal, shipping, discount, total };
   };
 
-  const clearAlert = () => {
-    const el = document.getElementById('reviewAlert');
-    if (!el) return;
-    el.textContent = '';
-    el.style.display = 'none';
+  const setText = (id, text) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  };
+
+  const showAlert = (msg) => {
+    const alertEl = document.getElementById('reviewAlert');
+    if (!alertEl) return;
+    alertEl.style.display = 'block';
+    alertEl.textContent = msg;
   };
 
   const renderAddress = () => {
-    const addressBox = document.getElementById('addressBox');
-    if (!addressBox) return;
+    const box = document.getElementById('addressBox');
+    if (!box) return;
 
-    const address = readAddress();
-    if (!address) {
-      addressBox.innerHTML = `
-        <div class="address-empty">
-          اطلاعات گیرنده ثبت نشده است.
-          <a href="checkout.html" class="link-btn">ثبت اطلاعات</a>
-        </div>
-      `;
+    const addr = readAddress();
+    if (!addr) {
+      box.innerHTML = `<div style="color: var(--muted);">آدرسی ثبت نشده. لطفاً اطلاعات را در صفحه تسویه حساب وارد کنید.</div>`;
       return;
     }
 
-    const fullName = `${address.firstName || ''} ${address.lastName || ''}`.trim() || '—';
-    const phone = address.phone || '—';
-    const email = address.email || '—';
-    const province = address.province || '—';
-    const city = address.city || '—';
-    const postalCode = address.postalCode || '—';
-    const addr = address.address || '—';
+    const fullName = `${addr.firstName || ''} ${addr.lastName || ''}`.trim();
+    const provinceCity = `${addr.province || '-'} / ${addr.city || '-'}`;
 
-    addressBox.innerHTML = `
-      <div class="address-row"><span>نام و نام خانوادگی:</span><strong>${fullName}</strong></div>
-      <div class="address-row"><span>تلفن:</span><strong>${phone}</strong></div>
-      <div class="address-row"><span>ایمیل:</span><strong>${email}</strong></div>
-      <div class="address-row"><span>استان / شهر:</span><strong>${province} / ${city}</strong></div>
-      <div class="address-row"><span>آدرس:</span><strong>${addr}</strong></div>
-      <div class="address-row"><span>کد پستی:</span><strong>${postalCode}</strong></div>
+    box.innerHTML = `
+      <div class="review-line"><strong>نام و نام خانوادگی:</strong> ${fullName || '-'}</div>
+      <div class="review-line"><strong>تلفن:</strong> ${addr.phone || '-'}</div>
+      <div class="review-line"><strong>ایمیل:</strong> ${addr.email || '-'}</div>
+      <div class="review-line"><strong>استان / شهر:</strong> ${provinceCity}</div>
+      <div class="review-line"><strong>آدرس:</strong> ${addr.address || '-'}</div>
+      <div class="review-line"><strong>کد پستی:</strong> ${addr.postalCode || '-'}</div>
     `;
   };
 
-  const renderItems = () => {
-    const cart = readCart();
-    const container = document.getElementById('reviewItems');
-    if (!container) return;
+  const renderItems = (cart) => {
+    const list = document.getElementById('reviewItems');
+    if (!list) return;
 
     if (!cart.length) {
-      container.innerHTML = `<div class="review-empty">سبد خرید شما خالی است.</div>`;
+      list.innerHTML = `<div style="color: var(--muted);">سبد خرید شما خالی است.</div>`;
       return;
     }
 
-    container.innerHTML = '';
-
+    list.innerHTML = '';
     cart.forEach((item) => {
       const qty = Number(item.quantity) || 1;
       const price = Number(item.price) || 0;
@@ -109,114 +99,92 @@
       img.alt = item.name || 'محصول';
       applyImgFallback(img);
 
-      const info = document.createElement('div');
-      info.className = 'review-item-info';
+      const meta = document.createElement('div');
+      meta.className = 'meta';
 
       const title = document.createElement('div');
-      title.className = 'review-item-title';
+      title.className = 'title';
       title.textContent = item.name || 'محصول';
 
-      const meta = document.createElement('div');
-      meta.className = 'review-item-meta';
-      meta.textContent = `تعداد: ${qty} | وزن: ${getWeightText(item.weight)}`;
+      const sub = document.createElement('div');
+      sub.className = 'sub';
+      sub.textContent = `تعداد: ${qty} | وزن: ${getWeightText(item.weight)}`;
 
-      const priceEl = document.createElement('div');
-      priceEl.className = 'review-item-price';
-      priceEl.textContent = `${formatPrice(total)} تومان`;
+      const p = document.createElement('div');
+      p.className = 'price';
+      p.textContent = `${formatPrice(total)} تومان`;
 
-      info.appendChild(title);
-      info.appendChild(meta);
+      meta.appendChild(title);
+      meta.appendChild(sub);
+      meta.appendChild(p);
 
       row.appendChild(img);
-      row.appendChild(info);
-      row.appendChild(priceEl);
-
-      container.appendChild(row);
+      row.appendChild(meta);
+      list.appendChild(row);
     });
   };
 
-  const renderSummary = () => {
-    const cart = readCart();
-
-    const subtotal = cart.reduce((sum, item) => {
-      const qty = Number(item.quantity) || 1;
-      const price = Number(item.price) || 0;
-      return sum + qty * price;
-    }, 0);
-
-    const shipping = subtotal > 300000 ? 0 : (cart.length ? 25000 : 0);
-    const discount = 0;
-    const total = subtotal + shipping - discount;
-
-    const subtotalEl = document.getElementById('reviewSubtotal');
-    const shippingEl = document.getElementById('reviewShipping');
-    const discountEl = document.getElementById('reviewDiscount');
-    const totalEl = document.getElementById('reviewTotal');
-
-    if (subtotalEl) subtotalEl.textContent = `${formatPrice(subtotal)} تومان`;
-    if (shippingEl) shippingEl.textContent = shipping === 0 ? 'رایگان' : `${formatPrice(shipping)} تومان`;
-    if (discountEl) discountEl.textContent = '۰ تومان';
-    if (totalEl) totalEl.textContent = `${formatPrice(total)} تومان`;
+  const renderSummary = (totals) => {
+    setText('reviewSubtotal', `${formatPrice(totals.subtotal)} تومان`);
+    setText('reviewShipping', totals.shipping === 0 ? 'رایگان' : `${formatPrice(totals.shipping)} تومان`);
+    setText('reviewDiscount', `${formatPrice(totals.discount)} تومان`);
+    setText('reviewTotal', `${formatPrice(totals.total)} تومان`);
   };
 
-  const validateBeforeConfirm = () => {
-    const cart = readCart();
-    const address = readAddress();
-
-    if (!cart.length) {
-      alertBox('سبد خرید شما خالی است. ابتدا محصولی اضافه کنید.');
-      return false;
-    }
-
-    if (!address || !address.firstName || !address.lastName || !address.phone || !address.province || !address.city || !address.address || !address.postalCode) {
-      alertBox('اطلاعات گیرنده کامل نیست. لطفاً به صفحه تسویه حساب برگردید و اطلاعات را کامل کنید.');
-      return false;
-    }
-
-    clearAlert();
-    return true;
+  const getPaymentMethod = () => {
+    const checked = document.querySelector('input[name="payment"]:checked');
+    return checked ? checked.value : 'online';
   };
 
   const confirmOrder = () => {
-    if (!validateBeforeConfirm()) return;
+    const cart = readCart();
+    if (!cart.length) {
+      showAlert('سبد خرید شما خالی است. ابتدا محصولی به سبد خرید اضافه کنید.');
+      return;
+    }
 
-    // فعلاً سفارش واقعی نداریم: فقط شبیه‌سازی
-    const payment = document.querySelector('input[name="payment"]:checked')?.value || 'online';
+    const address = readAddress();
+    if (!address) {
+      showAlert('اطلاعات گیرنده ثبت نشده است. لطفاً به صفحه تسویه حساب برگردید.');
+      return;
+    }
 
-    // می‌توانی اینجا orderId بسازی و در localStorage ذخیره کنی
-    const orderId = `PP-${Date.now()}`;
-    localStorage.setItem(
-      'lastOrder',
-      JSON.stringify({
-        id: orderId,
-        payment,
-        createdAt: new Date().toISOString()
-      })
-    );
+    const totals = calcTotals(cart);
 
-    // خالی کردن سبد
+    const order = {
+      id: `PP-${Date.now()}`,
+      createdAt: new Date().toISOString(),
+      paymentMethod: getPaymentMethod(), // online | cod
+      address,
+      items: cart,
+      totals
+    };
+
+    localStorage.setItem('lastOrder', JSON.stringify(order));
     localStorage.removeItem('cart');
+
     if (typeof window.updateCartCount === 'function') window.updateCartCount();
 
-    alert(`سفارش شما ثبت شد.\nکد سفارش: ${orderId}`);
-
-    // مقصد بعد از ثبت سفارش (فعلاً)
-    window.location.href = 'index.html';
+    window.location.href = 'order-success.html';
   };
 
-  const bindActions = () => {
+  const initButtons = () => {
     const backBtn = document.getElementById('backToCheckoutBtn');
-    const confirmBtn = document.getElementById('confirmOrderBtn');
-
     if (backBtn) backBtn.addEventListener('click', () => (window.location.href = 'checkout.html'));
+
+    const confirmBtn = document.getElementById('confirmOrderBtn');
     if (confirmBtn) confirmBtn.addEventListener('click', confirmOrder);
   };
 
   document.addEventListener('DOMContentLoaded', () => {
+    const cart = readCart();
+    const totals = calcTotals(cart);
+
     renderAddress();
-    renderItems();
-    renderSummary();
-    bindActions();
+    renderItems(cart);
+    renderSummary(totals);
+    initButtons();
+
     if (typeof window.updateCartCount === 'function') window.updateCartCount();
   });
 })();
