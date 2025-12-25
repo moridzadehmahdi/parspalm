@@ -22,12 +22,13 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 </head>
-<body>
+<body class="home">
 
 <!-- ===== هدر ===== -->
 <header>
   <div class="header-container">
-    <div class="logo">Pars Palm</div>
+    <a class="logo" href="index.html">Pars Palm</a>
+
 
     <!-- دکمه منوی همبرگری -->
     <button class="menu-toggle" aria-label="باز کردن منو">
@@ -187,25 +188,85 @@
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
       <div class="products-scroll">
         <article class="offer-product" data-product-name="خرما پیارم ویژه">
-          <img src="assets/images/offer1.jpg" alt="خرما پیارم با تخفیف ویژه" loading="lazy" />
+         <span class="offer-badge">🔥</span>
+          <div class="product-image">
+  <img
+    src="assets/images/products/piarom/piarom-1.png"
+    alt="خرما پیارم پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/piarom/piarom-2.png"
+    alt="خرما پیارم نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h4>خرما پیارم ویژه</h4>
           <span class="price"><del>180,000</del> 145,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=1'">خرید</button>
         </article>
         <article class="offer-product" data-product-name="عسل کوهی خالص">
-          <img src="assets/images/offer2.jpg" alt="عسل طبیعی کوهی" loading="lazy" />
+         <span class="offer-badge">🔥</span>
+          <div class="product-image">
+  <img
+    src="assets/images/products/asal/asal-1.png"
+    alt="عسل طبیعی کوهی پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/asal/asal-2.png"
+    alt="عسل طبیعی کوهی نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h4>عسل کوهی خالص</h4>
           <span class="price"><del>220,000</del> 185,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=2'">خرید</button>
         </article>
         <article class="offer-product" data-product-name="حلوا ارده اعلا">
-          <img src="assets/images/offer3.jpg" alt="حلوا ارده ممتاز" loading="lazy" />
+         <span class="offer-badge">🔥</span>
+                    <div class="product-image">
+  <img
+    src="assets/images/products/halva-arde/halva-arde-1.png"
+    alt="حلوا ارده ممتاز پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/halva-arde/halva-arde-2.png"
+    alt="حلوا ارده ممتاز نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h4>حلوا ارده اعلا</h4>
           <span class="price"><del>85,000</del> 68,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=3'">خرید</button>
         </article>
         <article class="offer-product" data-product-name="گردوی تازه محلی">
-          <img src="assets/images/offer4.jpg" alt="گردوی تازه" loading="lazy" />
+         <span class="offer-badge">🔥</span>
+                              <div class="product-image">
+  <img
+    src="assets/images/products/gerdu/gerdu-1.png"
+    alt="گردوی تازه پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/gerdu/gerdu-2.png"
+    alt="گردوی تازه نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h4>گردوی تازه محلی</h4>
           <span class="price"><del>120,000</del> 95,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=4'">خرید</button>
@@ -224,7 +285,21 @@
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
       <div class="products-scroll">
         <article class="product-card" data-product-name="خرما پیارم ممتاز">
-          <img src="assets/images/product1.jpg" alt="خرما پیارم ممتاز - خرمای درجه یک هرمزگان" loading="lazy" />
+                                        <div class="product-image">
+  <img
+    src="assets/images/products/piarom/piarom-1.png"
+    alt="خرما پیارم ممتاز - خرمای درجه یک هرمزگان پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/piarom/piarom-2.png"
+    alt="خرما پیارم ممتاز - خرمای درجه یک هرمزگان نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرما پیارم ممتاز</h3>
           <p>خرمای درجه یک هرمزگان با طعمی شیرین و بافت نرم.</p>
           <span class="price">150,000 تومان</span>
@@ -232,7 +307,21 @@
         </article>
 
         <article class="product-card" data-product-name="خرما کبکاب تازه">
-          <img src="assets/images/product2.jpg" alt="خرما کبکاب تازه - خرمای تازه بوشهری" loading="lazy" />
+                                                  <div class="product-image">
+  <img
+    src="assets/images/products/kabkab/kabkab-1.png"
+    alt="خرما کبکاب تازه - خرمای تازه بوشهری پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/kabkab/kabkab-2.png"
+    alt="خرما کبکاب تازه - خرمای تازه بوشهری نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3> خرما کبکاب تازه</h3>
           <p>خرمای تازه و خوش‌طعم بوشهری.</p>
           <span class="price">120,000 تومان</span>
@@ -240,7 +329,21 @@
         </article>
 
         <article class="product-card" data-product-name="خرما شاهانی شیراز">
-          <img src="assets/images/product3.jpg" alt="خرما شاهانی شیراز - خرمای شیرین لذیذ" loading="lazy" />
+               <div class="product-image">
+  <img
+    src="assets/images/products/shahani/shahani-1.png"
+    alt="خرما شاهانی شیراز - خرمای شیرین لذیذ پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/shahani/shahani-2.png"
+    alt="خرما شاهانی شیراز - خرمای شیرین لذیذ نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرما شاهانی شیراز</h3>
           <p>خرمای شیرین و لذیذ با بافتی لطیف.</p>
           <span class="price">130,000 تومان</span>
@@ -248,7 +351,21 @@
         </article>
         
         <article class="product-card" data-product-name="گرده نخل تازه">
-          <img src="assets/images/product6.jpg" alt="گرده نخل تازه" loading="lazy" />
+                         <div class="product-image">
+  <img
+    src="assets/images/products/garde/garde-1.png"
+    alt="گرده نخل تازه پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/garde/garde-2.png"
+    alt="گرده نخل تازه نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>گرده نخل تازه</h3>
           <p>گرده نخل طبیعی با خواص درمانی.</p>
           <span class="price">95,000 تومان</span>
@@ -256,7 +373,21 @@
         </article>
         
         <article class="product-card" data-product-name="خرمای زاهدی">
-          <img src="assets/images/product7.jpg" alt="خرمای زاهدی" loading="lazy" />
+             <div class="product-image">
+  <img
+    src="assets/images/products/zahedi/zahedi-1.png"
+    alt="خرمای زاهدی پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/zahedi/zahedi-2.png"
+    alt="خرمای زاهدی نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرمای زاهدی</h3>
           <p>خرمای زاهدی مرغوب با طعمی دلچسب.</p>
           <span class="price">110,000 تومان</span>
@@ -264,7 +395,21 @@
         </article>
         
         <article class="product-card" data-product-name="عسل طبیعی گون">
-          <img src="assets/images/product4.jpg" alt="عسل طبیعی گون" loading="lazy" />
+                       <div class="product-image">
+  <img
+    src="assets/images/products/asal/asal-1.png"
+    alt="عسل طبیعی گون پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/asal/asal-2.png"
+    alt="عسل طبیعی گون نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>عسل طبیعی گون</h3>
           <p>عسل خالص گون با خواص دارویی.</p>
           <span class="price">140,000 تومان</span>
@@ -272,7 +417,21 @@
         </article>
         
         <article class="product-card" data-product-name="حلوا ارده ممتاز">
-          <img src="assets/images/product5.jpg" alt="حلوا ارده ممتاز" loading="lazy" />
+                         <div class="product-image">
+  <img
+    src="assets/images/products/halva-arde/halva-arde-1.png"
+    alt="حلوا ارده ممتاز پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/halva-arde/halva-arde-2.png"
+    alt="حلوا ارده ممتاز نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>حلوا ارده ممتاز</h3>
           <p>حلوا ارده طبیعی و خالص.</p>
           <span class="price">160,000 تومان</span>
@@ -312,21 +471,63 @@
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
       <div class="products-scroll">
         <article class="product-card" data-product-name="خرما خاصویی">
-          <img src="assets/images/discount1.jpg" alt="خرما خاصویی با تخفیف ویژه" loading="lazy" />
+                 <div class="product-image">
+  <img
+    src="assets/images/products/khasoyi/khasoyi-1.png"
+    alt="خرما خاصویی با تخفیف ویژه پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/khasoyi/khasoyi-2.png"
+    alt="خرما خاصویی با تخفیف ویژه نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرما خاصویی</h3>
           <p>خرمای شیرین و مغذی با تخفیف ویژه.</p>
           <span class="price"><del>110,000</del> 95,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=12'">خرید</button>
         </article>
         <article class="product-card" data-product-name="خرما پیارم درجه یک">
-          <img src="assets/images/discount2.jpg" alt="خرما پیارم درجه یک با تخفیف" loading="lazy" />
+                           <div class="product-image">
+  <img
+    src="assets/images/products/piarom/piarom-1.png"
+    alt="خرما پیارم درجه یک با تخفیف پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/piarom/piarom-2.png"
+    alt="خرما پیارم درجه یک با تخفیف نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرما پیارم درجه یک</h3>
           <p>خرمای صادراتی با تخفیف محدود.</p>
           <span class="price"><del>180,000</del> 160,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=13'">خرید</button>
         </article>
         <article class="product-card" data-product-name="خرما کبکاب">
-          <img src="assets/images/discount3.jpg" alt="خرما کبکاب با تخفیف" loading="lazy" />
+                                     <div class="product-image">
+  <img
+    src="assets/images/products/kabkab/kabkab-1.png"
+    alt="خرما کبکاب با تخفیف پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/kabkab/kabkab-2.png"
+    alt="خرما کبکاب با تخفیف نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرما کبکاب</h3>
           <p>خرمای تازه و مرغوب بوشهر.</p>
           <span class="price"><del>140,000</del> 120,000 تومان</span>
@@ -335,7 +536,21 @@
         
         <!-- محصولات جدید اضافه شده -->
         <article class="product-card" data-product-name="عسل طبیعی کنار">
-          <img src="assets/images/discount4.jpg" alt="عسل طبیعی کنار" loading="lazy" />
+                    <div class="product-image">
+  <img
+    src="assets/images/products/asal/asal-1.png"
+    alt="عسل طبیعی کنار پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/asal/asal-2.png"
+    alt="عسل طبیعی کنار نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>عسل طبیعی کنار</h3>
           <p>عسل خالص کنار با خاصیت درمانی.</p>
           <span class="price"><del>200,000</del> 170,000 تومان</span>
@@ -343,7 +558,21 @@
         </article>
         
         <article class="product-card" data-product-name="پسته رفسنجان">
-          <img src="assets/images/discount5.jpg" alt="پسته رفسنجان" loading="lazy" />
+                              <div class="product-image">
+  <img
+    src="assets/images/products/peste/peste-1.png"
+    alt="پسته رفسنجان پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/peste/peste-2.png"
+    alt="پسته رفسنجان نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>پسته رفسنجان</h3>
           <p>پسته مرغوب رفسنجان درجه یک.</p>
           <span class="price"><del>150,000</del> 125,000 تومان</span>
@@ -363,21 +592,63 @@
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
       <div class="products-scroll">
         <article class="product-card" data-product-name="خرما شاهانی">
-          <img src="assets/images/best1.jpg" alt="خرما شاهانی با کیفیت عالی" loading="lazy" />
+                                        <div class="product-image">
+  <img
+    src="assets/images/products/shahani/shahani-1.png"
+    alt="خرما شاهانی با کیفیت عالی پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/shahani/shahani-2.png"
+    alt="خرما شاهانی با کیفیت عالی نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرما شاهانی</h3>
           <p>خرمای محبوب مشتریان با کیفیت عالی.</p>
           <span class="price">135,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=17'">خرید</button>
         </article>
         <article class="product-card" data-product-name="خرما پیارم ممتاز">
-          <img src="assets/images/best2.jpg" alt="خرما پیارم ممتاز صادراتی" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/piarom/piarom-1.png"
+    alt="خرما پیارم ممتاز صادراتی پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/piarom/piarom-2.png"
+    alt="خرما پیارم ممتاز صادراتی نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرما پیارم ممتاز</h3>
           <p>خرمای درجه یک صادراتی.</p>
           <span class="price">150,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=18'">خرید</button>
         </article>
         <article class="product-card" data-product-name="خرما خاصویی">
-          <img src="assets/images/best3.jpg" alt="خرما خاصویی محبوب جنوب" loading="lazy" />
+                      <div class="product-image">
+  <img
+    src="assets/images/products/khasoyi/khasoyi-1.png"
+    alt="خرما خاصویی محبوب جنوب پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/khasoyi/khasoyi-2.png"
+    alt="خرما خاصویی محبوب جنوب نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>خرما خاصویی</h3>
           <p>خرمای شیرین و محبوب جنوب.</p>
           <span class="price">95,000 تومان</span>
@@ -386,7 +657,21 @@
         
         <!-- محصولات جدید اضافه شده -->
         <article class="product-card" data-product-name="ارده خالص">
-          <img src="assets/images/best4.jpg" alt="ارده خالص" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/arde/arde-1.png"
+    alt="ارده خالص پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/arde/arde-2.png"
+    alt="ارده خالص نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>ارده خالص</h3>
           <p>ارده طبیعی بدون افزودنی.</p>
           <span class="price">110,000 تومان</span>
@@ -394,7 +679,21 @@
         </article>
         
         <article class="product-card" data-product-name="شیره خرما">
-          <img src="assets/images/best5.jpg" alt="شیره خرما" loading="lazy" />
+                      <div class="product-image">
+  <img
+    src="assets/images/products/shire-khorma/shire-khorma-1.png"
+    alt="شیره خرما پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/shire-khorma/shire-khorma-2.png"
+    alt="شیره خرما نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
           <h3>شیره خرما</h3>
           <p>شیره خرما طبیعی و خالص.</p>
           <span class="price">145,000 تومان</span>
@@ -435,14 +734,42 @@
         <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
         <div class="products-scroll">
           <article class="product-card" data-product-name="خرما پیارم">
-            <img src="assets/images/date1.jpg" alt="خرما پیارم مرغوب جنوب" loading="lazy" />
-            <h3>خرما پیарم</h3>
+            <div class="product-image">
+  <img
+    src="assets/images/products/piarom/piarom-1.png"
+    alt="خرما پیارم مرغوب جنوب پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/piarom/piarom-2.png"
+    alt="خرما پیارم مرغوب جنوب نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
+            <h3>خرما پیارم</h3>
             <p>خرمای مرغوب جنوب ایران.</p>
             <span class="price">150,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=22'">خرید</button>
           </article>
           <article class="product-card" data-product-name="خرما خاصویی">
-            <img src="assets/images/date2.jpg" alt="خرما خاصویی شیرین" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/khasoyi/khasoyi-1.png"
+    alt="خرما خاصویی شیرین پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/khasoyi/khasoyi-2.png"
+    alt="خرما خاصویی شیرین نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>خرما خاصویی</h3>
             <p>خرمای شیرین و محبوب.</p>
             <span class="price">95,000 تومان</span>
@@ -451,21 +778,63 @@
           
           <!-- محصولات جدید اضافه شده -->
           <article class="product-card" data-product-name="خرما کبکاب">
-            <img src="assets/images/date6.jpg" alt="خرما کبکاب" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/kabkab/kabkab-1.png"
+    alt="خرما کبکاب پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/kabkab/kabkab-2.png"
+    alt="خرما کبکاب نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>خرما کبکاب</h3>
             <p>خرمای کبکاب تازه و مرغوب.</p>
             <span class="price">120,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=24'">خرید</button>
           </article>
           <article class="product-card" data-product-name="خرما شاهانی">
-            <img src="assets/images/date7.jpg" alt="خرما شاهانی" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/shahani/shahani-1.png"
+    alt="خرما شاهانی پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/shahani/shahani-2.png"
+    alt="خرما شاهانی نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>خرما شاهانی</h3>
             <p>خرمای شاهانی شیراز.</p>
             <span class="price">140,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=25'">خرید</button>
           </article>
           <article class="product-card" data-product-name="خرما هلیله">
-            <img src="assets/images/date8.jpg" alt="خرما هلیله" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/helile/helile-1.png"
+    alt="خرما هلیله پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/helile/helile-2.png"
+    alt="خرما هلیله نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>خرما هلیله</h3>
             <p>خرمای هلیله خوش طعم.</p>
             <span class="price">160,000 تومان</span>
@@ -483,14 +852,42 @@
         <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
         <div class="products-scroll">
           <article class="product-card" data-product-name="لواشک انار">
-            <img src="assets/images/lavashak1.jpg" alt="لواشک انار ترش" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/anar/anar-1.png"
+    alt="لواشک انار ترش پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/anar/anar-2.png"
+    alt="لواشک انار ترش نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>لواشک انار</h3>
             <p>لواشک خوشمزه و ترش.</p>
             <span class="price">30,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=27'">خرید</button>
           </article>
           <article class="product-card" data-product-name="لواشک زردآلو">
-            <img src="assets/images/lavashak2.jpg" alt="لواشک زردآلو شیرین" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/zardalu/zardalu-1.png"
+    alt="لواشک زردآلو شیرین پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/zardalu/zardalu-2.png"
+    alt="لواشک زردآلو شیرین نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>لواشک زردآلو</h3>
             <p>لواشک شیرین و نرم.</p>
             <span class="price">28,000 تومان</span>
@@ -499,7 +896,21 @@
           
           <!-- محصولات جدید اضافه شده -->
           <article class="product-card" data-product-name="لواشک آلوچه">
-            <img src="assets/images/lavashak3.jpg" alt="لواشک آلوچه" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/aluche/aluche-1.png"
+    alt="لواشک آلوچه پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/aluche/aluche-2.png"
+    alt="لواشک آلوچه نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>لواشک آلوچه</h3>
             <p>لواشک ترش مزه آلوچه.</p>
             <span class="price">25,000 تومان</span>
@@ -544,14 +955,42 @@
           
           <!-- محصولات جدید اضافه شده -->
           <article class="product-card" data-product-name="شیره خرما">
-            <img src="assets/images/shire-kharma.jpg" alt="شیره خرما" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/shire-khorma/shire-khorma-1.png"
+    alt="شیره خرما پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/shire-khorma/shire-khorma-2.png"
+    alt="شیره خرما نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>شیره خرما</h3>
             <p>شیره خرما طبیعی و خالص.</p>
             <span class="price">55,000 تومان</span>
             <button class="buy-btn" onclick="window.location.href='product.html?id=33'">خرید</button>
           </article>
           <article class="product-card" data-product-name="شیره انگور">
-            <img src="assets/images/shire-angoor.jpg" alt="شیره انگور" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/shire-angor/shire-angor-1.png"
+    alt="شیره انگور پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/shire-angor/shire-angor-2.png"
+    alt="شیره انگور نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>شیره انگور</h3>
             <p>شیره انگور مرغوب.</p>
             <span class="price">60,000 تومان</span>
@@ -565,7 +1004,21 @@
             <button class="buy-btn" onclick="window.location.href='product.html?id=35'">خرید</button>
           </article>
           <article class="product-card" data-product-name="حلوا ارده">
-            <img src="assets/images/halva-arde.jpg" alt="حلوا ارده" loading="lazy" />
+            <div class="product-image">
+  <img
+    src="assets/images/products/halva-arde/halva-arde-1.png"
+    alt="حلوا ارده پارس پالم"
+    class="img-main"
+    loading="lazy"
+  />
+
+  <img
+    src="assets/images/products/halva-arde/halva-arde-2.png"
+    alt="حلوا ارده نمای دوم"
+    class="img-hover"
+    loading="lazy"
+  />
+</div>
             <h3>حلوا ارده</h3>
             <p>حلوا ارده اعلا.</p>
             <span class="price">65,000 تومان</span>
