@@ -996,5 +996,50 @@ body.home .offer-product:hover .offer-badge {
 body.home .offer-badge {
   animation: firePulse 2.2s infinite;
 }
+/* ===== Header final layout (ALL pages) ===== */
+header .header-container{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+/* گروه لوگو + همبرگر سمت راست */
+header .brand-group{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;   /* در RTL: این گروه را به راست هل می‌دهد */
+  flex: 0 0 auto;
+}
+
+/* همبرگر دقیقا سمت راست لوگو */
+header .menu-toggle{
+  order: -1;            /* در داخل brand-group اول بیاید => سمت راست */
+  padding: 8px 12px;
+}
+
+/* متن منو اگر جایی بود، مخفی */
+header .menu-toggle .menu-text{
+  display: none !important;
+}
+
+header .logo{
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* سرچ وسط */
+header .search-bar{
+  flex: 1 1 520px;
+  max-width: 520px;
+}
+
+/* آیکون‌ها سمت چپ */
+header .header-icons{
+  flex: 0 0 auto;
+}
+.cart-count:empty { display: none !important; }
+
 
 

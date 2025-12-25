@@ -156,17 +156,36 @@
       price: Math.round(Number(basePrice || 0) * w.multiplier)
     }));
 
-  const updateCartCount = () => {
-    try {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const totalItems = cart.reduce((total, item) => total + (Number(item.quantity) || 0), 0);
-      document.querySelectorAll('.cart-count').forEach((el) => {
-        el.textContent = totalItems;
-      });
-    } catch (error) {
-      console.error('خطا در به روزرسانی تعداد سبد خرید:', error);
+  function updateCartCount(count) {
+  const cartCounts = document.querySelectorAll('.cart-count');
+
+  cartCounts.forEach(badge => {
+    if (!count || count <= 0) {
+      badge.textContent = '';
+      badge.style.display = 'none';
+    } else {
+      badge.textContent = count;
+      badge.style.display = 'inline-flex';
     }
-  };
+  });
+}
+function getCartCountFromStorage() {
+  try {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // اگر کارتت آرایه آیتم‌هاست:
+    return cart.reduce((sum, item) => sum + (Number(item.qty) || 1), 0);
+    // اگر کارتت فقط آرایه ساده است و qty نداری، این خط را جایگزین کن:
+    // return cart.length;
+  } catch (e) {
+    return 0;
+  }
+}
+
+function refreshCartCount() {
+  const count = getCartCountFromStorage();
+  updateCartCount(count);
+}
+
 
   // -------------------- UI logic (page-safe) --------------------
   const applyTheme = (theme) => {
@@ -209,6 +228,7 @@
     const openMenu = () => {
       mainMenu.classList.add('active');
       if (menuOverlay) menuOverlay.classList.add('active');
+      body.classList.add('menu-open');
       body.style.overflow = 'hidden';
       const icon = menuToggle.querySelector('.menu-icon');
       if (icon) icon.textContent = '✖';
@@ -217,6 +237,7 @@
     const closeMenu = () => {
       mainMenu.classList.remove('active');
       if (menuOverlay) menuOverlay.classList.remove('active');
+      body.classList.remove('menu-open');
       body.style.overflow = '';
       const icon = menuToggle.querySelector('.menu-icon');
       if (icon) icon.textContent = '☰';
@@ -447,7 +468,7 @@
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => updateCartCount(), 250);
+      resizeTimer = setTimeout(() => refreshCartCount(), 250);
     });
   };
 
@@ -457,19 +478,25 @@
   window.PARSPALM_GET_PRODUCT = PARSPALM_GET_PRODUCT;
   window.PARSPALM_GET_WEIGHT_OPTIONS = PARSPALM_GET_WEIGHT_OPTIONS;
   window.updateCartCount = updateCartCount;
-
+  window.getCartCountFromStorage = getCartCountFromStorage;
+  window.refreshCartCount = refreshCartCount;
   // نرمال‌سازی تصاویر بعد از export
   window.normalizeProductImages();
 
   // -------------------- Init --------------------
   document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount();
-    initThemeToggle();
-    initMenu();
-    initScrollButtons();
-    initDailyTimer();
-    initDragScroll();
-    initSearch();
-    initResizeHandler();
+  refreshCartCount();
+  initThemeToggle();
+  initMenu();
+  initScrollButtons();
+  initDailyTimer();
+  initDragScroll();
+  initSearch();
+  initResizeHandler();
+
+  document.addEventListener('cart:updated', () => {
+    refreshCartCount();
   });
+});
+
 })();
