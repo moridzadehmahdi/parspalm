@@ -654,6 +654,99 @@ main {
   gap: 8px;
   font-weight: 600;
 }
+/* ===== Section Title (ParsPalm Premium) ===== */
+.section-header {
+  position: relative;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(123, 63, 0, 0.1),
+    rgba(212, 175, 55, 0.1)
+  );
+  border: 1px solid rgba(123, 63, 0, 0.12);
+  box-shadow: 0 10px 22px rgba(31, 21, 12, 0.06);
+  overflow: hidden;
+}
+
+/* خط تزئینی نرم در پس‌زمینه */
+.section-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(212, 175, 55, 0.18),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.section-header h2 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.2px;
+  margin: 0;
+  padding: 6px 10px 6px 6px;
+}
+
+/* آیکن طلایی کنار عنوان (پیش‌فرض) */
+.section-header h2::before {
+  content: '✦';
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), rgba(212, 175, 55, 0.55));
+  color: #3f2a00;
+  font-weight: 900;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* خط زیرعنوان */
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -10px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(212, 175, 55, 0),
+    rgba(212, 175, 55, 0.95),
+    rgba(212, 175, 55, 0)
+  );
+}
+.section-header.title-new h2::before {
+  content: '🆕';
+}
+.section-header.title-discount h2::before {
+  content: '🏷️';
+}
+.section-header.title-best h2::before {
+  content: '⭐';
+}
+.section-header.title-dates h2::before {
+  content: '🌴';
+}
+.section-header.title-lavashak h2::before {
+  content: '🍑';
+}
+.section-header.title-derivatives h2::before {
+  content: '🥣';
+}
+.section-header.title-sweets h2::before {
+  content: '🍰';
+}
 
 /* ===== فوتر ===== */
 footer {
@@ -767,14 +860,14 @@ footer {
 .checkout-card {
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 14px;
   padding: 18px;
 }
 
 /* بنر بزرگ (همان مستطیل مشکی) را کنترل کن */
 .checkout-review-hero {
-  height: 180px;            /* جلوی بزرگ شدن عجیب را می‌گیرد */
+  height: 180px; /* جلوی بزرگ شدن عجیب را می‌گیرد */
   max-height: 180px;
   border-radius: 16px;
   overflow: hidden;
@@ -808,7 +901,7 @@ footer {
   height: 80px;
   border-radius: 12px;
   object-fit: cover;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .review-item .meta {
@@ -836,7 +929,7 @@ footer {
   justify-content: space-between;
   gap: 10px;
   padding: 10px 0;
-  border-bottom: 1px dashed rgba(0,0,0,0.12);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
 }
 
 .review-summary-row:last-child {
@@ -860,7 +953,7 @@ footer {
   cursor: pointer;
   border-radius: 12px;
   padding: 10px 14px;
-  border: 1px solid rgba(0,0,0,0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background: white;
 }
 
@@ -886,7 +979,7 @@ body.home .offer-product .product-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity .35s ease, transform .6s ease;
+  transition: opacity 0.35s ease, transform 0.6s ease;
 }
 
 /* عکس اصلی */
@@ -917,12 +1010,12 @@ body.home .offer-product:hover .product-image .img-hover {
 }
 /* ===== پیشنهاد امروز بزرگ‌تر ===== */
 body.home .offer-product {
-  min-width: 260px;        /* قبلاً احتمالاً 220 یا کمتر بوده */
+  min-width: 260px; /* قبلاً احتمالاً 220 یا کمتر بوده */
   padding: 14px;
 }
 
 body.home .offer-product .product-image {
-  height: 220px;           /* بزرگ‌تر از product-card */
+  height: 220px; /* بزرگ‌تر از product-card */
   border-radius: 14px;
 }
 
@@ -940,17 +1033,17 @@ body.home .offer-product .price {
 body.home .offer-product .buy-btn {
   margin-top: 10px;
   padding: 10px 14px;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 body.home .offer-product {
   border: 1px solid rgba(123, 63, 0, 0.15);
-  box-shadow: 0 10px 28px rgba(0,0,0,.08);
-  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.home .offer-product:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,.14);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
 }
 /* ===== Offer Badge (Fire Emoji) ===== */
 body.home .offer-product {
@@ -968,10 +1061,10 @@ body.home .offer-badge {
   background: linear-gradient(135deg, #ffb347, #ff6a00);
   border-radius: 50%;
   font-size: 1.2rem;
-  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   z-index: 3;
   cursor: default;
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 
 body.home .offer-product:hover .offer-badge {
@@ -997,7 +1090,7 @@ body.home .offer-badge {
   animation: firePulse 2.2s infinite;
 }
 /* ===== Header final layout (ALL pages) ===== */
-header .header-container{
+header .header-container {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -1005,41 +1098,394 @@ header .header-container{
 }
 
 /* گروه لوگو + همبرگر سمت راست */
-header .brand-group{
+header .brand-group {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: auto;   /* در RTL: این گروه را به راست هل می‌دهد */
+  margin-left: auto; /* در RTL: این گروه را به راست هل می‌دهد */
   flex: 0 0 auto;
 }
 
 /* همبرگر دقیقا سمت راست لوگو */
-header .menu-toggle{
-  order: -1;            /* در داخل brand-group اول بیاید => سمت راست */
+header .menu-toggle {
+  order: -1; /* در داخل brand-group اول بیاید => سمت راست */
   padding: 8px 12px;
 }
 
 /* متن منو اگر جایی بود، مخفی */
-header .menu-toggle .menu-text{
+header .menu-toggle .menu-text {
   display: none !important;
 }
 
-header .logo{
+header .logo {
   white-space: nowrap;
   flex: 0 0 auto;
 }
 
 /* سرچ وسط */
-header .search-bar{
+header .search-bar {
   flex: 1 1 520px;
   max-width: 520px;
 }
 
 /* آیکون‌ها سمت چپ */
-header .header-icons{
+header .header-icons {
   flex: 0 0 auto;
 }
-.cart-count:empty { display: none !important; }
+.cart-count:empty {
+  display: none !important;
+}
+/* کادر بزرگ برای هر بخش */
+.section-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 18px 16px 10px;
+}
 
+/* عنوان وسط بالا */
+.section-box .section-header {
+  justify-content: center;
+  margin-bottom: 12px;
+}
 
+.section-box .section-header h2 {
+  text-align: center;
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text);
+  position: relative;
+  padding: 10px 18px;
+}
 
+/* خط تزئینی زیر عنوان */
+.section-box .section-header h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2px;
+  width: 90px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* کمی تنظیم پدینگ محصولات داخل کادر */
+.section-box .products-scroll {
+  padding: 12px 6px 18px;
+}
+/* استایل خاص پرتخفیف‌ترین‌ها */
+.title-discount .section-header h2 {
+  color: var(--danger);
+}
+
+/* خط تزئینی قرمز-طلایی */
+.title-discount .section-header h2::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--danger),
+    var(--accent),
+    transparent
+  );
+}
+/* استایل خاص پرفروش‌ترین‌ها */
+.title-best .section-header h2 {
+  color: var(--primary);
+}
+
+.title-best .section-header h2::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    var(--primary),
+    transparent
+  );
+}
+/* =========================================
+   DAILY OFFER — FINAL (Desktop: side RIGHT / rail LEFT)
+   Mobile: side becomes a short 1-line bar (no tall brown block)
+   Keeps scroll + arrows intact
+   ========================================= */
+
+/* wrapper */
+.daily-offer.clean-offer {
+  margin-top: 40px;
+}
+
+/* IMPORTANT: make grid LTR so first column is LEFT (rail) and second is RIGHT (side) */
+.daily-offer.clean-offer .offer-grid {
+  direction: ltr; /* کلید حل جابجایی ستون‌ها */
+  display: grid;
+  grid-template-columns: 1fr clamp(240px, 22vw, 300px); /* rail | side */
+  grid-template-areas: 'rail side';
+  gap: 16px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 16px;
+  align-items: stretch;
+}
+
+/* LEFT: products box */
+.daily-offer.clean-offer .offer-rail-box {
+  grid-area: rail;
+  direction: rtl; /* متن داخل RTL بماند */
+  position: relative;
+
+  border-radius: var(--radius-lg);
+  background: var(--surface-alt);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-soft);
+
+  /* space for arrows INSIDE the box */
+  padding: 14px 56px;
+  overflow: hidden;
+}
+
+/* the rail itself stays LTR to avoid RTL scroll bugs */
+.daily-offer.clean-offer .offer-rail {
+  direction: ltr;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+  gap: 18px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 10px 6px 18px;
+  scroll-snap-type: x mandatory;
+}
+
+/* snap */
+.daily-offer.clean-offer .offer-rail > * {
+  scroll-snap-align: start;
+}
+
+/* ensure cards content RTL */
+.daily-offer.clean-offer .offer-rail .offer-product {
+  direction: rtl;
+}
+
+/* scrollbar */
+.daily-offer.clean-offer .offer-rail::-webkit-scrollbar {
+  height: 6px;
+}
+.daily-offer.clean-offer .offer-rail::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+/* arrows */
+.daily-offer.clean-offer .offer-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  z-index: 10;
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* NOTE: rail is LTR, so prev should be LEFT and next RIGHT (natural) */
+.daily-offer.clean-offer .offer-arrow--prev {
+  left: 12px;
+}
+.daily-offer.clean-offer .offer-arrow--next {
+  right: 12px;
+}
+
+/* RIGHT: brown panel */
+.daily-offer.clean-offer .offer-side {
+  grid-area: side;
+  direction: rtl; /* متن RTL */
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+
+  min-height: 260px; /* دسکتاپ خوش‌فرم */
+  overflow: hidden;
+}
+
+/* inside panel (recommended structure)
+   .offer-side-top (title + badge)
+   .offer-side-timer (label + #daily-timer)
+   .offer-side-link (button/link)
+*/
+.daily-offer.clean-offer .offer-side-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.daily-offer.clean-offer .offer-side-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.daily-offer.clean-offer .offer-side-badge {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), #f6d36a);
+  color: #3f2a00;
+  font-weight: 900;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+  flex: 0 0 auto;
+}
+
+.daily-offer.clean-offer .offer-side-timer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.daily-offer.clean-offer .offer-side-timer-label {
+  opacity: 0.92;
+  font-size: 0.95rem;
+}
+
+/* timer pills (your #daily-timer markup) */
+.daily-offer.clean-offer #daily-timer {
+  direction: ltr;
+  unicode-bidi: plaintext;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.daily-offer.clean-offer #daily-timer .tbox {
+  min-width: 44px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #2b1a05;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+}
+.daily-offer.clean-offer #daily-timer .tsep {
+  opacity: 0.95;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.daily-offer.clean-offer .offer-side-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 800;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+.daily-offer.clean-offer .offer-side-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   MOBILE: single column
+   Side becomes a short bar (1 line), not tall
+   Order: side on top, rail below
+   ========================= */
+@media (max-width: 900px) {
+  .daily-offer.clean-offer .offer-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'side'
+      'rail';
+  }
+
+  /* make brown panel SHORT + HORIZONTAL */
+  .daily-offer.clean-offer .offer-side {
+    min-height: auto;
+    padding: 14px 14px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: nowrap; /* یک خط */
+  }
+
+  /* force all inner pieces stay in one line */
+  .daily-offer.clean-offer .offer-side-top,
+  .daily-offer.clean-offer .offer-side-timer,
+  .daily-offer.clean-offer .offer-side-link {
+    white-space: nowrap;
+  }
+
+  /* timer row in one line */
+  .daily-offer.clean-offer .offer-side-timer {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .daily-offer.clean-offer .offer-side-timer-label {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  /* smaller timer boxes on mobile so it doesn't increase height */
+  .daily-offer.clean-offer #daily-timer {
+    padding: 8px 10px;
+    border-radius: 14px;
+  }
+  .daily-offer.clean-offer #daily-timer .tbox {
+    min-width: 38px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 0.98rem;
+  }
+
+  /* make button compact so panel height stays small */
+  .daily-offer.clean-offer .offer-side-link {
+    padding: 10px 12px;
+    border-radius: 14px;
+  }
+}

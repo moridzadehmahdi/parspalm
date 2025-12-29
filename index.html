@@ -173,118 +173,100 @@
       <p>طعم اصالت و طبیعت در هر محصول</p>
     </div>
   </section>
+<!-- بخش پیشنهاد امروز (بازنویسی تمیز: باکس مستقل + اسکرول + دو فلش) -->
+<section class="daily-offer clean-offer" id="daily-offer">
+  <div class="offer-grid">
 
-  <!-- بخش پیشنهاد امروز -->
-  <section class="daily-offer">
-    <div class="offer-header">
-      <div class="offer-title">
-        <span class="offer-icon">%</span>
-        <h3>پیشنهاد امروز</h3>
-      </div>
-      <div class="offer-timer">
-        <span>زمان باقیمانده:</span>
-        <div class="timer" id="daily-timer">23:59:59</div>
-      </div>
-    </div>
-    <div class="offer-products">
-      <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
-      <div class="products-scroll">
+    <!-- باکس محصولات (همان کادر قرمز) -->
+    <div class="offer-rail-box">
+      <button class="offer-arrow offer-arrow--prev" type="button" aria-label="قبلی">‹</button>
+
+      <div class="offer-rail" id="offerRail">
         <article class="offer-product" data-product-name="خرما پیارم ویژه">
-         <span class="offer-badge">🔥</span>
+          <span class="offer-badge">🔥</span>
           <div class="product-image">
-  <img
-    src="assets/images/products/piarom/piarom-1.png"
-    alt="خرما پیارم پارس پالم"
-    class="img-main"
-    loading="lazy"
-  />
-
-  <img
-    src="assets/images/products/piarom/piarom-2.png"
-    alt="خرما پیارم نمای دوم"
-    class="img-hover"
-    loading="lazy"
-  />
-</div>
+            <img src="assets/images/products/piarom/piarom-1.png" alt="خرما پیارم پارس پالم" class="img-main" loading="lazy" />
+            <img src="assets/images/products/piarom/piarom-2.png" alt="خرما پیارم نمای دوم" class="img-hover" loading="lazy" />
+          </div>
           <h4>خرما پیارم ویژه</h4>
           <span class="price"><del>180,000</del> 145,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=1'">خرید</button>
         </article>
-        <article class="offer-product" data-product-name="عسل کوهی خالص">
-         <span class="offer-badge">🔥</span>
-          <div class="product-image">
-  <img
-    src="assets/images/products/asal/asal-1.png"
-    alt="عسل طبیعی کوهی پارس پالم"
-    class="img-main"
-    loading="lazy"
-  />
 
-  <img
-    src="assets/images/products/asal/asal-2.png"
-    alt="عسل طبیعی کوهی نمای دوم"
-    class="img-hover"
-    loading="lazy"
-  />
-</div>
+        <article class="offer-product" data-product-name="عسل کوهی خالص">
+          <span class="offer-badge">🔥</span>
+          <div class="product-image">
+            <img src="assets/images/products/asal/asal-1.png" alt="عسل طبیعی کوهی پارس پالم" class="img-main" loading="lazy" />
+            <img src="assets/images/products/asal/asal-2.png" alt="عسل طبیعی کوهی نمای دوم" class="img-hover" loading="lazy" />
+          </div>
           <h4>عسل کوهی خالص</h4>
           <span class="price"><del>220,000</del> 185,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=2'">خرید</button>
         </article>
-        <article class="offer-product" data-product-name="حلوا ارده اعلا">
-         <span class="offer-badge">🔥</span>
-                    <div class="product-image">
-  <img
-    src="assets/images/products/halva-arde/halva-arde-1.png"
-    alt="حلوا ارده ممتاز پارس پالم"
-    class="img-main"
-    loading="lazy"
-  />
 
-  <img
-    src="assets/images/products/halva-arde/halva-arde-2.png"
-    alt="حلوا ارده ممتاز نمای دوم"
-    class="img-hover"
-    loading="lazy"
-  />
-</div>
+        <article class="offer-product" data-product-name="حلوا ارده اعلا">
+          <span class="offer-badge">🔥</span>
+          <div class="product-image">
+            <img src="assets/images/products/halva-arde/halva-arde-1.png" alt="حلوا ارده ممتاز پارس پالم" class="img-main" loading="lazy" />
+            <img src="assets/images/products/halva-arde/halva-arde-2.png" alt="حلوا ارده ممتاز نمای دوم" class="img-hover" loading="lazy" />
+          </div>
           <h4>حلوا ارده اعلا</h4>
           <span class="price"><del>85,000</del> 68,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=3'">خرید</button>
         </article>
-        <article class="offer-product" data-product-name="گردوی تازه محلی">
-         <span class="offer-badge">🔥</span>
-                              <div class="product-image">
-  <img
-    src="assets/images/products/gerdu/gerdu-1.png"
-    alt="گردوی تازه پارس پالم"
-    class="img-main"
-    loading="lazy"
-  />
 
-  <img
-    src="assets/images/products/gerdu/gerdu-2.png"
-    alt="گردوی تازه نمای دوم"
-    class="img-hover"
-    loading="lazy"
-  />
-</div>
+        <article class="offer-product" data-product-name="گردوی تازه محلی">
+          <span class="offer-badge">🔥</span>
+          <div class="product-image">
+            <img src="assets/images/products/gerdu/gerdu-1.png" alt="گردوی تازه پارس پالم" class="img-main" loading="lazy" />
+            <img src="assets/images/products/gerdu/gerdu-2.png" alt="گردوی تازه نمای دوم" class="img-hover" loading="lazy" />
+          </div>
           <h4>گردوی تازه محلی</h4>
           <span class="price"><del>120,000</del> 95,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=4'">خرید</button>
         </article>
       </div>
-      <button class="scroll-btn right-scroll"><i class="fas fa-chevron-left"></i></button>
+
+      <button class="offer-arrow offer-arrow--next" type="button" aria-label="بعدی">›</button>
     </div>
-  </section>
+
+    <!-- پنل سمت راست -->
+    <aside class="offer-side">
+      <div class="offer-side-top">
+        <span class="offer-side-badge">%</span>
+        <h3 class="offer-side-title">پیشنهاد امروز</h3>
+      </div>
+
+      <div class="offer-side-timer">
+        <div class="offer-side-timer-label">زمان باقی‌مانده</div>
+
+        <div class="offer-side-timer-digi" id="daily-timer">
+          <span class="tbox">00</span><span class="tsep">:</span>
+          <span class="tbox">00</span><span class="tsep">:</span>
+          <span class="tbox">00</span>
+        </div>
+      </div>
+
+      <a class="offer-side-link" href="category.html?cat=offer">
+        مشاهده همه <i class="fas fa-chevron-left"></i>
+      </a>
+    </aside>
+
+  </div>
+</section>
+
 
   <!-- بخش جدیدترین‌ها -->
-  <section class="section-products">
+  <section class="section-products title-new">
+  <div class="section-box">
+
     <div class="section-header">
       <h2>جدیدترین‌ها</h2>
     </div>
+
     <div class="products-container">
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
+
       <div class="products-scroll">
         <article class="product-card" data-product-name="خرما پیارم ممتاز">
                                         <div class="product-image">
@@ -439,10 +421,13 @@
           <span class="price">160,000 تومان</span>
           <button class="buy-btn" onclick="window.location.href='product.html?id=11'">خرید</button>
         </article>
-      </div>
+       </div>
+
       <button class="scroll-btn right-scroll"><i class="fas fa-chevron-left"></i></button>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- بنرها: محصولات مخصوص رمضان و خوشمزه‌های پرطرفدار -->
   <section class="banner-section">
@@ -464,13 +449,19 @@
     </div>
   </section>
 
-  <!-- بخش پرتخفیف‌ترین‌ها -->
-  <section class="section-products">
+ <!-- بخش پرتخفیف‌ترین‌ها -->
+<section class="section-products title-discount">
+  <div class="section-box">
+
     <div class="section-header">
       <h2>پرتخفیف‌ترین‌ها</h2>
     </div>
+
     <div class="products-container">
-      <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
+      <button class="scroll-btn left-scroll">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
       <div class="products-scroll">
         <article class="product-card" data-product-name="خرما خاصویی">
                  <div class="product-image">
@@ -581,17 +572,26 @@
           <button class="buy-btn" onclick="window.location.href='product.html?id=16'">خرید</button>
         </article>
       </div>
-      <button class="scroll-btn right-scroll"><i class="fas fa-chevron-left"></i></button>
+
+      <button class="scroll-btn right-scroll">
+        <i class="fas fa-chevron-left"></i>
+      </button>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- بخش پرفروش‌ترین‌ها -->
-  <section class="section-products">
+<section class="section-products title-best">
+  <div class="section-box">
+
     <div class="section-header">
       <h2>پرفروش‌ترین‌ها</h2>
     </div>
+
     <div class="products-container">
       <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
+
       <div class="products-scroll">
         <article class="product-card" data-product-name="خرما شاهانی">
                                         <div class="product-image">
@@ -704,7 +704,9 @@
       </div>
       <button class="scroll-btn right-scroll"><i class="fas fa-chevron-left"></i></button>
     </div>
-  </section>
+
+  </div>
+</section>
 
   <!-- بنرها: لواشک و ترشیجات / عسل و کیک و کلوچه -->
   <section class="banner-section">
@@ -728,12 +730,16 @@
 
   <!-- دو ستون: خرماهای متنوع و لواشک‌ها -->
   <section class="two-columns">
-    <div class="column">
-      <div class="section-header">
-        <h2>خرماهای متنوع</h2>
-      </div>
+<div class="section-box">
+  <div class="column">
+    <div class="section-header title-dates">
+      <h2>خرماهای متنوع</h2>
+    </div>
+
+    
       <div class="products-container">
         <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
+
         <div class="products-scroll">
           <article class="product-card" data-product-name="خرما پیارم">
             <div class="product-image">
@@ -843,15 +849,20 @@
             <button class="buy-btn" onclick="window.location.href='product.html?id=26'">خرید</button>
           </article>
         </div>
+
         <button class="scroll-btn right-scroll"><i class="fas fa-chevron-left"></i></button>
       </div>
     </div>
+  </div>
+  <div class="section-box">
     <div class="column">
-      <div class="section-header">
-        <h2>لواشک‌ها</h2>
-      </div>
+    <div class="section-header title-lavashak">
+      <h2>لواشک‌ها</h2>
+    </div>
+
       <div class="products-container">
         <button class="scroll-btn left-scroll"><i class="fas fa-chevron-right"></i></button>
+
         <div class="products-scroll">
           <article class="product-card" data-product-name="لواشک انار">
             <div class="product-image">
@@ -933,15 +944,18 @@
             <button class="buy-btn" onclick="window.location.href='product.html?id=31'">خرید</button>
           </article>
         </div>
+
         <button class="scroll-btn right-scroll"><i class="fas fa-chevron-left"></i></button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- سه ستون: حلوا/ارده/شیره - شیرینی و کیک -->
   <section class="three-columns">
+    <div class="section-box">
     <div class="column">
-      <div class="section-header">
+      <div class="section-header title-derivatives">
         <h2>حلوا، ارده، شیره</h2>
       </div>
       <div class="products-container">
@@ -1030,8 +1044,10 @@
         <button class="scroll-btn right-scroll"><i class="fas fa-chevron-left"></i></button>
       </div>
     </div>
+    </div>
+  <div class="section-box">
     <div class="column">
-      <div class="section-header">
+      <div class="section-header title-sweets">
         <h2>شیرینی و کیک</h2>
       </div>
       <div class="products-container">
@@ -1078,6 +1094,7 @@
         <button class="scroll-btn right-scroll"><i class="fas fa-chevron-left"></i></button>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- دکمه پشتیبانی سمت راست -->

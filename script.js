@@ -157,9 +157,14 @@
     }));
 
   function updateCartCount(count) {
+  // اگر count پاس داده نشده، از localStorage بخوان
+  if (typeof count !== 'number') {
+    count = getCartCountFromStorage();
+  }
+
   const cartCounts = document.querySelectorAll('.cart-count');
 
-  cartCounts.forEach(badge => {
+  cartCounts.forEach((badge) => {
     if (!count || count <= 0) {
       badge.textContent = '';
       badge.style.display = 'none';
@@ -169,11 +174,12 @@
     }
   });
 }
+
 function getCartCountFromStorage() {
   try {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     // اگر کارتت آرایه آیتم‌هاست:
-    return cart.reduce((sum, item) => sum + (Number(item.qty) || 1), 0);
+    return cart.reduce((sum, item) => sum + (Number(item.quantity) || 1), 0);
     // اگر کارتت فقط آرایه ساده است و qty نداری، این خط را جایگزین کن:
     // return cart.length;
   } catch (e) {
@@ -273,26 +279,15 @@ function refreshCartCount() {
       if (event.key === 'Escape' && mainMenu.classList.contains('active')) closeMenu();
     });
   };
-
-  const initScrollButtons = () => {
-    const scrollBtns = document.querySelectorAll('.scroll-btn');
-    if (!scrollBtns.length) return;
-
-    scrollBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const isLeft = btn.classList.contains('left-scroll');
-        const container = btn.closest('.products-container');
-        const scrollElement = container ? container.querySelector('.products-scroll') : null;
-        if (!scrollElement) return;
-
-        const scrollAmount = scrollElement.offsetWidth * 0.8;
-        scrollElement.scrollBy({
-          left: isLeft ? -scrollAmount : scrollAmount,
-          behavior: 'smooth'
-        });
-      });
-    });
-  };
+function renderDigiTimer(el, timeStr) {
+  if (!el) return;
+  const [hh='00', mm='00', ss='00'] = String(timeStr || '00:00:00').split(':');
+  el.innerHTML = `
+    <span class="tbox">${hh.padStart(2,'0')}</span><span class="tsep">:</span>
+    <span class="tbox">${mm.padStart(2,'0')}</span><span class="tsep">:</span>
+    <span class="tbox">${ss.padStart(2,'0')}</span>
+  `;
+}
 
   const initDailyTimer = () => {
     const dailyTimer = document.getElementById('daily-timer');
@@ -305,7 +300,8 @@ function refreshCartCount() {
 
       const diff = endOfDay - now;
       if (diff <= 0) {
-        dailyTimer.textContent = '00:00:00';
+        renderDigiTimer(dailyTimer, '00:00:00');
+
         return;
       }
 
@@ -313,7 +309,8 @@ function refreshCartCount() {
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      dailyTimer.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      renderDigiTimer(dailyTimer, `${String(hours).padStart(2,'0')}:${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`);
+
     };
 
     update();
@@ -471,6 +468,55 @@ function refreshCartCount() {
       resizeTimer = setTimeout(() => refreshCartCount(), 250);
     });
   };
+function initScrollCarousels() {
+  document.querySelectorAll('.products-container').forEach((container) => {
+    const rail = container.querySelector('.products-scroll');
+    const prev = container.querySelector('.left-scroll');
+    const next = container.querySelector('.right-scroll');
+    if (!rail) return;
+
+    const step = () => Math.max(240, rail.clientWidth * 0.9);
+
+    const doScroll = (delta) => {
+      rail.scrollBy({ left: delta, behavior: 'smooth' });
+    };
+
+    if (prev) prev.addEventListener('click', () => doScroll(+step()));  // RTL: قبلی
+    if (next) next.addEventListener('click', () => doScroll(-step()));  // RTL: بعدی
+  });
+}
+function initDailyOfferRail() {
+  const rail = document.getElementById("offerRail");
+  if (!rail) return;
+
+  const prev = document.querySelector(".offer-arrow--prev");
+  const next = document.querySelector(".offer-arrow--next");
+  if (!prev || !next) return;
+
+  const getStep = () => {
+    const first = rail.querySelector(".offer-product");
+    const cardW = first ? first.getBoundingClientRect().width : 260;
+
+    // gap از CSS
+    const styles = getComputedStyle(rail);
+    const gap = parseFloat(styles.columnGap || styles.gap || "18") || 18;
+
+    return cardW + gap;
+  };
+
+  prev.addEventListener("click", () => {
+    rail.scrollBy({ left: -getStep(), behavior: "smooth" });
+  });
+
+  next.addEventListener("click", () => {
+    rail.scrollBy({ left: getStep(), behavior: "smooth" });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initDailyOfferRail);
+
+
+
 
   // -------------------- Export globals --------------------
   window.PARSPALM_PRODUCTS = PARSPALM_PRODUCTS;
@@ -488,15 +534,13 @@ function refreshCartCount() {
   refreshCartCount();
   initThemeToggle();
   initMenu();
-  initScrollButtons();
   initDailyTimer();
   initDragScroll();
   initSearch();
   initResizeHandler();
-
-  document.addEventListener('cart:updated', () => {
-    refreshCartCount();
-  });
+  initScrollCarousels();
+  window.addEventListener('cart:updated', refreshCartCount);
 });
 
 })();
+
